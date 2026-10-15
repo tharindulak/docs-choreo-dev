@@ -1,0 +1,168 @@
+---
+title: Deploy Your First Service
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/quick-start-guides/deploy-your-first-service.md
+---
+
+# Deploy Your First Service
+
+WSO2 Developer Platform is an Internal Developer Platform (IDevP) that makes it easy to deploy, monitor, and manage your cloud-native services. This allows you to focus on innovation and implementation.
+
+With WSO2 Developer Platform, you can deploy services written in your preferred programming language in just a few simple steps.
+
+In this guide, you will:
+
+- Use a pre-built service that manages a book list.
+- Build and deploy the service in WSO2 Developer Platform using the `Node.js` build preset. The service runs on port 8080.
+- Test the service.
+
+For a video tutorial, check out [Deploy Your First Service with WSO2 Developer Platform](https://www.youtube.com/watch?v=-qoweQWCiYM).
+
+<Prerequisites>
+
+## Prerequisites
+
+1. GitHub account: Fork the [WSO2 Developer Platform sample book list service repository](https://github.com/wso2/choreo-sample-book-list-service/), which contains the sample for this guide.
+
+2. If you're signing in to the WSO2 Developer Platform Console for the first time, create an organization:
+    1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/) and sign in using your Google, GitHub, or Microsoft account.
+    2. Enter a unique organization name. For example, `Stark Industries`.
+    3. Read and accept the privacy policy and terms of use.
+    4. Click **Create**.
+
+    This creates the organization and opens the **Project Home** page of the default project created for you.
+
+### Repository file structure
+
+Let's review the key files in the sample application:
+
+:::note
+
+The file paths are relative to `<WSO2 Developer Platform-sample-book-list-service>/`.
+
+:::
+| Filepath               | Description                                                                   |
+|------------------------|-------------------------------------------------------------------------------|
+| `app.mjs`              | The Node.js (JavaScript) service code.                                        |
+| `.choreo/component.yaml` | WSO2 Developer Platform-specific configuration for exposing the service.                       |
+| `openapi.yaml`         | OpenAPI contract for the service, required to publish it as a managed API.    |
+
+Let's get started!
+
+</Prerequisites>
+
+<Steps>
+
+## Create a project (optional) {/* #step-1-create-a-project-optional */}
+
+WSO2 Developer Platform creates a default project for you when you create an organization. You can use that project for this guide and go straight to step 2. Follow the steps below only if you want to work in a separate project:
+
+1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/) and sign in, then go to the organization home page.
+2. On the organization home page, click **+ Create Project**.
+3. Enter the following details:
+
+    :::info
+
+    The **Name** field must be unique and cannot be changed after creation.
+
+    :::
+
+    | **Field**                | **Value**                          |
+    |--------------------------|------------------------------------|
+    | **Project Display Name** | Book List Project                  |
+    | **Name**                 | book-list-project                  |
+    | **Project Description**  | My sample project                  |
+
+4. Click **Create**. This creates the project and takes you to the project home page.
+
+## Create a service component {/* #step-2-create-a-service-component */}
+
+1. On the project home page, click **Service** under **Create a Component**.
+2. Click **Authorize with GitHub** to connect WSO2 Developer Platform to your GitHub account. If you haven't connected your GitHub repository to WSO2 Developer Platform, enter your credentials and select the repository you forked earlier to install the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps).
+
+    Alternatively, select the **Use Public GitHub Repository** option and paste the [WSO2 Developer Platform sample Book List Service repository](https://github.com/wso2/choreo-sample-book-list-service) URL in the **Provide Repository URL** field. However, enabling [**Auto Deploy**](../choreo-concepts/ci-cd.mdx#deploy) requires authorizing the repository with the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps).
+
+    :::note
+
+    The **WSO2 Developer Platform GitHub App** requires:
+    - Read and write access to code and pull requests.
+    - Read access to issues and metadata.
+
+    You can [revoke access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-authorized-integrations#reviewing-your-authorized-github-apps) at any time. Write access is only used for sending pull requests; WSO2 Developer Platform will not push changes directly to your repository.
+
+    :::
+
+3. Enter the following information:
+
+    | **Field**             | **Description**                  |
+    |-----------------------|----------------------------------|
+    | **Organization**      | Your GitHub account              |
+    | **Repository**        | WSO2 Developer Platform-sample-book-list-service  |
+    | **Branch**            | main                             |
+    | **Component Directory** | /                 |
+
+4. Select the **NodeJS** build preset.
+5. Enter the following details:
+
+    | **Field**                    | **Description**   |
+    |------------------------------|-------------------|
+    | **Language Version**         | 20.x.x            |
+
+6. Enter the following details for Display name and Description:
+
+    | **Field**                 | **Value**              |
+    |---------------------------|------------------------|
+    | **Component Display Name**| Book List              |
+    | **Description**           | Gets the book list     |
+
+7. Click **Create**.
+
+You have successfully created a Service component using the NodeJS build preset. Now, let's build and deploy the service.
+
+## Build and deploy {/* #step-3-build-and-deploy */}
+
+<Steps>
+
+### Build {/* #step-31-build */}
+
+1. On the project home page, click the `Book List` component under **Component Listing**. This takes you to the component overview page.
+2. In the left navigation, click **Build**.
+3. Click **Build Latest**.
+
+    :::note
+
+    The build process may take some time. You can track progress in the **Build Details** pane. Once complete, the build status changes to **Success**.
+
+    :::
+
+### Deploy {/* #step-32-deploy */}
+
+1. In the left navigation menu, click **Deploy**.
+2. On the **Set Up** card, click **Configure & Deploy**.
+3. In the **Environment Configurations** pane, click **Next**.
+4. In the **File Mount** pane, click **Next**.
+5. Review the **Endpoint Details** and click **Deploy**.
+
+    :::note
+
+    Deployment may take some time. Once complete, the status changes to **Active** on the **Development** environment card.
+
+    :::
+
+</Steps>
+
+## Test the service {/* #step-4-test-the-service */}
+
+1. In the WSO2 Developer Platform Console left navigation menu, click **Test** and then click **Console**.
+2. In the OpenAPI Console, select **Development** from the environment drop-down.
+3. In the **Endpoint** list, select **Books REST Endpoint**.
+4. Expand the **GET /books** method and click **Try it out**.
+5. Click **Execute**.
+6. Check the **Server Response** section.
+
+You can also try out other methods in the OpenAPI Console.
+
+After successfully testing your service, explore other WSO2 Developer Platform features like [managing](../api-management/lifecycle-management.mdx), [observing](../monitoring-and-insights/observability-overview.mdx), and [DevOps](../devops-and-ci-cd/view-runtime-details.mdx).
+
+</Steps>

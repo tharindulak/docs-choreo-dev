@@ -1,0 +1,164 @@
+---
+title: Connect to Remote Dependencies While Developing
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/develop-components/connect-to-remote-dependencies-while-developing.md
+---
+
+To streamline local development and verification of WSO2 Developer Platform components that depend on [WSO2 Developer Platform connections](../../WSO2%20Developer%20Platform-concepts/connections/), you can bridge your local environment with the remote/deployed project. This is facilitated by the WSO2 Developer Platform CLI and VS Code extension, which create a secure connected environment enabling real-time testing and validation.
+
+This connected environment acts as a temporary link to your WSO2 Developer Platform deployment. It provides your local component with the necessary connection configurations injected as environment variables. Furthermore, any outgoing HTTP requests from this local environment are securely routed to your deployed WSO2 Developer Platform environment. This enables you to:
+
+- **Securely Access Dependencies**: Local components automatically get connection details for WSO2 Developer Platform services, third-party services, and databases.
+- **Test Integrations Early**: Verify your local component's interaction with WSO2 Developer Platform services before pushing code, using the same environment configuration.
+- **Consistent Testing Across Environments**: Ensure reliable and secure test results in both local and CI environments.
+
+## Using CLI
+
+The WSO2 Developer Platform CLI allows you to create a local subshell that is bridged to your deployed WSO2 Developer Platform environment.
+
+<Prerequisites>
+
+### Prerequisites
+
+1. Install the WSO2 Developer Platform CLI. See the [setup guide](../../WSO2%20Developer%20Platform-cli/get-started-with-the-WSO2%20Developer%20Platform-cli/) for instructions.
+2. Login to WSO2 Developer Platform via CLI
+
+    ```sh
+    wdp login
+    ```
+
+:::tip
+
+For testing in CI environments, login to WSO2 Developer Platform CLI using a [personal access token](../../WSO2%20Developer%20Platform-cli/manage-authentication-with-personal-access-tokens/).    
+
+:::
+
+</Prerequisites>
+
+### Connect to a project
+
+1. The following command will create a subshell that will be connected to your remote project environment.
+
+    ```sh
+    wdp connect --project default-project
+    ```
+
+2. Execute the command to run your component locally within the WSO2 Developer Platform subshell. For example:
+
+    ```sh
+    go run main.go
+    ```
+
+Once your application is running within the WSO2 Developer Platform subshell:
+
+- All connection configurations belonging to the selected project will be automatically injected into your application as environment variables.
+- Outgoing network requests made by your application to its dependent services will be securely redirected by the WSO2 Developer Platform CLI to the relevant services in your remote environment.
+
+Your application will now run connected to its remote dependencies for local development.
+
+
+### Advanced examples
+
+- **Focusing Connection on a Specific Component**
+
+    By default, all connection configurations within your project are injected into the subshell. If you only want to focus on a particular component's connections, you can pass it as a flag:
+
+    ```sh
+    wdp connect --project default-project --component my-component
+    ```
+
+- **Connecting to Different Environments**
+
+    By default, connection is established with your development environment. To connect to other *non-critical* environments, use the `wdp connect` command with the following flag:
+
+    ```sh
+    wdp connect --project default-project --env test-env
+    ```
+
+- **Skipping Remote Dependencies**
+
+    Sometimes, you might run certain dependencies locally. By default, `wdp connect` injects all connection configurations. To use your locally running dependencies instead and skip injecting specific configurations, use the WSO2 Developer Platform connect command with the following flags:
+
+    ```sh
+    wdp connect --project default-project --skip-connection test-conn1 --skip-connection test-conn2 
+    ```
+
+- **Combining Connect with Application Startup**
+
+    You might want to combine the `wdp connect` command and your application's start command into a single command. This automates the creation of the subshell and the launch of your application, reducing manual steps in your development process:
+
+    ```sh
+    wdp connect --project default-project -- go run main,go
+    ```
+
+:::tip
+
+Execute the command `wdp connect --help` to explore all available advanced options and flags.
+
+:::
+
+             
+## Debug using VS Code
+
+The WSO2 Developer Platform VS Code extension allows you to ensure that applications you launch and debug via VS Code are connected to your WSO2 Developer Platform deployed project environment.
+
+:::info[Note]
+
+ This section applies when launching your local application through the VS Code debugger. For users starting their application in a terminal within VS Code, please see the ["Using CLI"](./#using-cli) section for the relevant instructions.
+
+:::
+
+<Prerequisites>
+
+### Prerequisites
+
+1. Install the WSO2 Developer Platform VS Code Extension [(Refer Guide)](../develop-components-using-vs-code/).
+2. Login to WSO2 Developer Platform via VS Code Extension.
+3. Link your workspace directory to an existing WSO2 Developer Platform project [(More information)](../develop-components-using-vs-code/#understand-the-project-context).
+
+</Prerequisites>
+
+### Launch Application (Connected to Project)
+
+1. Configure Your Application's [Launch Configuration](https://code.visualstudio.com/docs/debugtest/debugging-configuration).
+2. Add the `"WSO2 Developer Platform": true` property to your launch configuration to instruct the WSO2 Developer Platform VS Code extension to launch your application in a subshell that's connected to the WSO2 Developer Platform project that the workspace is associated with.
+
+    ```json
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "request": "launch",
+                // ...Rest of your configuration
+                // Add the following new property
+                "choreoConnect": true
+            }
+        ]
+    }
+    ```
+
+3. Launch your application using VS Code [(Refer Guide)](https://code.visualstudio.com/docs/debugtest/debugging-configuration#_start-a-debugging-session-with-a-launch-configuration).
+
+### Advanced Configurations
+
+You can customize the connection behavior to the remote project by modifying the launch configuration as shown below.
+
+```json
+{
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "request": "launch",
+              // ...Rest of your configuration
+              // Customize WSO2 Developer Platform connect configurations
+              "choreoConnect": {
+                  "project": "default-project",
+                  "component": "my-component",
+                  "env": "test-env",
+                  "skipConnection": ["test-conn1"]
+              }
+          }
+      ]
+}
+```

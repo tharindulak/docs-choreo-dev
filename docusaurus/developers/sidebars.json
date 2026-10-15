@@ -1,0 +1,1010 @@
+{
+  "docs": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "Home"
+    },
+    {
+      "type": "category",
+      "label": "Introduction",
+      "items": [
+        {
+          "type": "doc",
+          "id": "what-is-choreo",
+          "label": "What is WSO2 Developer Platform?"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Quick Start Guides",
+      "items": [
+        {
+          "type": "doc",
+          "id": "quick-start-guides/deploy-your-first-service",
+          "label": "Deploy Your First Service"
+        },
+        {
+          "type": "doc",
+          "id": "quick-start-guides/deploy-your-first-static-web-application",
+          "label": "Deploy Your First Static Web Application"
+        },
+        {
+          "type": "doc",
+          "id": "quick-start-guides/deploy-a-web-application-that-consumes-a-backend-service",
+          "label": "Deploy a Web Application that Consumes a Backend Service"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform Samples",
+      "items": [
+        {
+          "type": "category",
+          "label": "Explore the Samples Collection",
+          "items": [
+            {
+              "type": "doc",
+              "id": "choreo-samples/samples-overview",
+              "label": "Samples Overview"
+            },
+            {
+              "type": "doc",
+              "id": "choreo-samples/quick-deploy-a-sample",
+              "label": "Quick Deploy a Sample"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "choreo-samples/explore-the-demo-organization",
+          "label": "Explore the Demo Organization"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Tutorials",
+      "items": [
+        {
+          "type": "doc",
+          "id": "tutorials/expose-a-service-as-a-managed-api",
+          "label": "Expose a Service as a Managed API"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/secure-an-api-with-role-based-access-control",
+          "label": "Secure an API with Role-Based Access Control"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/consume-an-api-hosted-in-choreo",
+          "label": "Consume an API hosted in WSO2 Developer Platform"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform Concepts",
+      "items": [
+        {
+          "type": "doc",
+          "id": "choreo-concepts/resource-hierarchy",
+          "label": "Resource Hierarchy"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/organization",
+          "label": "Organization"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/project",
+          "label": "Project"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/component",
+          "label": "Component"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/endpoint",
+          "label": "Endpoint"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/ci-cd",
+          "label": "CI/CD"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/deployment-tracks",
+          "label": "Deployment Tracks"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/connections",
+          "label": "Connections"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/data-planes",
+          "label": "Data Planes"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/environments",
+          "label": "Environments"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/choreo-marketplace",
+          "label": "WSO2 Developer Platform Marketplace"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/access-control",
+          "label": "Access Control"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/release-management",
+          "label": "Release Management"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Develop Components",
+      "items": [
+        {
+          "type": "category",
+          "label": "Develop Services",
+          "items": [
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/service-component-overview",
+              "label": "Service Component Overview"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/develop-a-service",
+              "label": "Develop a Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/develop-a-service-with-docker",
+              "label": "Develop a service with Docker"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/develop-a-ballerina-service",
+              "label": "Develop a Ballerina Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/expose-a-grpc-endpoint-via-a-service",
+              "label": "Expose a gRPC Endpoint via a Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/expose-a-tcp-server-via-a-service",
+              "label": "Expose a TCP Server via a Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/expose-a-udp-server-via-a-service",
+              "label": "Expose a UDP Server via a Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/expose-a-ballerina-graphql-endpoint-via-a-service",
+              "label": "Expose a Ballerina GraphQL Endpoint via a Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/expose-a-prism-based-mock-server-using-an-openapi-specification",
+              "label": "Expose a Prism-Based Mock Server Using an OpenAPI Specification"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-services/expose-a-websocket-endpoint-via-a-service",
+              "label": "Expose a WebSocket Endpoint via a Service"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Develop an API Proxy",
+          "items": [
+            {
+              "type": "doc",
+              "id": "develop-components/develop-proxy/develop-an-api-proxy-from-scratch",
+              "label": "Develop an API Proxy from Scratch"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-proxy/develop-an-api-proxy-from-an-open-api-specification",
+              "label": "Develop an API Proxy from Open API Specification"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-proxy/develop-an-api-proxy-from-a-github-repository-source",
+              "label": "Develop an API Proxy from Git Repository Source"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Develop Web Applications",
+          "items": [
+            {
+              "type": "doc",
+              "id": "develop-components/develop-web-applications/build-and-deploy-a-single-page-web-application",
+              "label": "Build and Deploy a Single-Page Web Application"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-web-applications/develop-web-applications-locally-with-managed-authentication",
+              "label": "Develop Web Applications Locally with WSO2 Developer Platform’s Managed Authentication"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/develop-a-webhook",
+          "label": "Develop a Webhook (Deprecated)"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/develop-an-external-consumer",
+          "label": "Develop an External Consumer (Deprecated)"
+        },
+        {
+          "type": "category",
+          "label": "Develop Integrations",
+          "items": [
+            {
+              "type": "doc",
+              "id": "develop-components/develop-integrations/develop-an-integration-as-an-api-service",
+              "label": "Develop an WSO2 MI integration as an API Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-integrations/develop-an-event-handler",
+              "label": "Develop an Event Handler"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-integrations/develop-a-scheduled-task",
+              "label": "Develop a Scheduled Task"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/develop-integrations/develop-a-manual-task",
+              "label": "Develop a Manual Task"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/deploy-mcp-servers/deploy-a-mcp-server",
+          "label": "Deploy a MCP Server"
+        },
+        {
+          "type": "category",
+          "label": "Work with the Micro Integrator Runtime",
+          "items": [
+            {
+              "type": "doc",
+              "id": "develop-components/work-with-the-micro-integrator-runtime-in-choreo",
+              "label": "Get Started with the Micro Integrator Runtime"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/manage-the-micro-integrator-runtime-version-in-your-integration-project",
+              "label": "Manage the Micro Integrator Runtime Version in Your Integration Project"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/develop-components-with-git",
+          "label": "Develop Components With Git"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/bring-your-own-image",
+          "label": "Bring Your Own Image"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/deploy-an-application-with-buildpacks",
+          "label": "Deploy an Application with Build Presets"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/deploy-a-containerized-application",
+          "label": "Deploy a Containerized Application"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/integrate-unit-tests-into-the-build-pipeline",
+          "label": "Integrate Unit Tests into the Build Pipeline"
+        },
+        {
+          "type": "category",
+          "label": "Share and Reuse Components",
+          "items": [
+            {
+              "type": "doc",
+              "id": "develop-components/sharing-and-reusing/create-a-connection",
+              "label": "Create a Connection"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/sharing-and-reusing/create-a-connection-to-a-genai-service",
+              "label": "Create a connection to a GenAI Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/sharing-and-reusing/use-a-connection-in-your-service",
+              "label": "Use a Connection in Your Service"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/sharing-and-reusing/use-a-connection-in-your-web-application",
+              "label": "Use a Connection in Your Web Application"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/sharing-and-reusing/use-a-database-connection-in-your-component",
+              "label": "Use a Database Connection in Your Component"
+            },
+            {
+              "type": "doc",
+              "id": "develop-components/sharing-and-reusing/delete-a-connection",
+              "label": "Delete a Connection"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/manage-deployment-tracks-for-choreo-components",
+          "label": "Manage Deployment Tracks for WSO2 Developer Platform Components"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/configure-endpoints",
+          "label": "Configure Endpoints"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/manage-component-source-configurations",
+          "label": "Manage Component Source Configurations"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/submit-and-manage-workflow-approval-requests",
+          "label": "Submit and Manage Workflow Approval Requests"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/develop-components-using-vs-code",
+          "label": "Develop Components Using VS Code"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/use-configuration-form",
+          "label": "Use Configuration Form for Managing Configurations"
+        },
+        {
+          "type": "doc",
+          "id": "develop-components/connect-to-remote-dependencies-while-developing",
+          "label": "Connect to Remote Dependencies While Developing"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Integrate and Manage External Services",
+      "items": [
+        {
+          "type": "doc",
+          "id": "integrate-and-manage-external-services/integrate-and-manage-third-party-services",
+          "label": "Integrate and Manage Third-Party Services"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform-Managed Databases and Caches",
+      "items": [
+        {
+          "type": "doc",
+          "id": "manage-databases-and-caches/choreo-managed-databases-and-caches",
+          "label": "Overview"
+        },
+        {
+          "type": "doc",
+          "id": "manage-databases-and-caches/choreo-managed-postgresql-databases",
+          "label": "PostgreSQL"
+        },
+        {
+          "type": "doc",
+          "id": "manage-databases-and-caches/choreo-managed-mysql-databases",
+          "label": "MySQL"
+        },
+        {
+          "type": "doc",
+          "id": "manage-databases-and-caches/choreo-managed-caches",
+          "label": "WSO2 Developer Platform-Managed Cache"
+        },
+        {
+          "type": "doc",
+          "id": "manage-databases-and-caches/add-choreo-managed-databases-and-caches-to-the-marketplace",
+          "label": "Add WSO2 Developer Platform-Managed Databases and Caches to the Marketplace"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform-Managed Message Brokers",
+      "items": [
+        {
+          "type": "doc",
+          "id": "manage-message-brokers/choreo-managed-message-brokers",
+          "label": "Overview"
+        },
+        {
+          "type": "category",
+          "label": "Kafka",
+          "items": [
+            {
+              "type": "doc",
+              "id": "manage-message-brokers/create-choreo-managed-kafka-services",
+              "label": "Create WSO2 Developer Platform-Managed Kafka Services"
+            },
+            {
+              "type": "doc",
+              "id": "manage-message-brokers/configure-a-kafka-service",
+              "label": "Configure a Kafka Service"
+            },
+            {
+              "type": "doc",
+              "id": "manage-message-brokers/monitor-a-kafka-service",
+              "label": "Monitor a Kafka Service"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Authentication and Authorization",
+      "items": [
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/secure-api-access-with-asgardeo",
+          "label": "Secure API Access with Asgardeo"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/secure-api-access-with-azure-ad",
+          "label": "Secure API Access with Azure"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/secure-web-applications-with-managed-authentication",
+          "label": "Secure Web Applications with Managed Authentication"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/test-secure-api-access-with-choreo-built-in-security-token-service",
+          "label": "Test Secure API Access with WSO2 Developer Platform Built-In Security Token Service"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/pass-end-user-attributes-to-upstream-services",
+          "label": "Pass End-User Attributes to Upstream Services"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/configure-mutual-tls-between-components",
+          "label": "Configure Mutual TLS Between Components"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/secure-communication-between-the-choreo-gateway-and-your-backend-with-mutual-tls",
+          "label": "Secure Communication Between the WSO2 Developer Platform Gateway and Your Backend with Mutual TLS"
+        },
+        {
+          "type": "doc",
+          "id": "authentication-and-authorization/secure-communication-between-choreo-gateway-and-backend-with-oauth2",
+          "label": "Secure Communication Between the WSO2 Developer Platform Gateway and Your Backend with OAuth2"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "DevOps and CI/CD",
+      "items": [
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/manage-configurations-and-secrets",
+          "label": "Manage Configurations and Secrets"
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/view-runtime-details",
+          "label": "View Runtime Details"
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/configure-container-resources-commands-and-arguments",
+          "label": "Configure Container Resources, Commands, and Arguments"
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/set-up-health-checks",
+          "label": "Set Up Health Checks"
+        },
+        {
+          "type": "category",
+          "label": "Autoscale",
+          "items": [
+            {
+              "type": "doc",
+              "id": "devops-and-ci-cd/autoscale/autoscale-component-replicas",
+              "label": "Autoscale Component Replicas"
+            },
+            {
+              "type": "doc",
+              "id": "devops-and-ci-cd/autoscale/autoscale-components-with-scale-to-zero",
+              "label": "Autoscale Components with Scale-to-Zero"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/configure-storage",
+          "label": "Configure Storage"
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/manage-environments",
+          "label": "Manage Environments"
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/manage-configuration-groups",
+          "label": "Manage Configuration Groups"
+        },
+        {
+          "type": "category",
+          "label": "Manage Certificates",
+          "items": [
+            {
+              "type": "doc",
+              "id": "devops-and-ci-cd/manage-certificates",
+              "label": "Manage Certificates"
+            },
+            {
+              "type": "doc",
+              "id": "devops-and-ci-cd/configure-certificates-for-proxies",
+              "label": "Configure Certificates for Proxies"
+            },
+            {
+              "type": "doc",
+              "id": "devops-and-ci-cd/configure-certificates-for-services",
+              "label": "Configure Certificates for Services"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/manage-continuous-deployment-pipelines",
+          "label": "Manage Continuous Deployment Pipelines"
+        },
+        {
+          "type": "doc",
+          "id": "devops-and-ci-cd/configure-vpns-on-the-choreo-cloud-data-plane",
+          "label": "Configure VPNs on the WSO2 Developer Platform Cloud Data Plane"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Testing",
+      "items": [
+        {
+          "type": "doc",
+          "id": "testing/test-rest-endpoints-via-the-openapi-console",
+          "label": "Test REST Endpoints via the OpenAPI Console"
+        },
+        {
+          "type": "doc",
+          "id": "testing/test-graphql-endpoints-via-the-graphql-console",
+          "label": "Test GraphQL Endpoints via the GraphQL Console"
+        },
+        {
+          "type": "doc",
+          "id": "testing/test-websocket-endpoints-via-the-websocket-console",
+          "label": "Test WebSocket Endpoints via the WebSocket Console"
+        },
+        {
+          "type": "doc",
+          "id": "testing/test-apis-with-curl",
+          "label": "Test APIs with cURL"
+        },
+        {
+          "type": "doc",
+          "id": "testing/test-apis-with-choreo-apichat",
+          "label": "Test APIs with WSO2 Developer Platform API Chat"
+        },
+        {
+          "type": "doc",
+          "id": "testing/test-components-with-test-runner",
+          "label": "Test Components with Test Runner (Deprecated)"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Consuming Services",
+      "items": [
+        {
+          "type": "category",
+          "label": "Consume a Service",
+          "items": [
+            {
+              "type": "doc",
+              "id": "consuming-services/consume-an-api-key-secured-service",
+              "label": "Consume a service secured with API key"
+            },
+            {
+              "type": "doc",
+              "id": "consuming-services/consume-an-oauth2-secured-service",
+              "label": "Consume a service secured with OAuth2"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "consuming-services/manage-application",
+          "label": "Manage Application"
+        },
+        {
+          "type": "doc",
+          "id": "consuming-services/share-applications",
+          "label": "Share Applications"
+        },
+        {
+          "type": "doc",
+          "id": "consuming-services/manage-subscription",
+          "label": "Manage Subscription"
+        },
+        {
+          "type": "doc",
+          "id": "consuming-services/generate-an-access-token",
+          "label": "Generate an Access Token"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API Management",
+      "items": [
+        {
+          "type": "doc",
+          "id": "api-management/lifecycle-management",
+          "label": "Lifecycle Management"
+        },
+        {
+          "type": "doc",
+          "id": "api-management/documents",
+          "label": "Documents"
+        },
+        {
+          "type": "doc",
+          "id": "api-management/api-rate-limiting",
+          "label": "API Rate Limiting"
+        },
+        {
+          "type": "category",
+          "label": "API Policies",
+          "items": [
+            {
+              "type": "doc",
+              "id": "api-management/api-policies/about-api-policies",
+              "label": "About API Policies"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/api-policies/attach-and-manage-policies",
+              "label": "Attach and Manage Policies"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/api-policies/apply-advanced-settings-on-mediation-policies",
+              "label": "Apply Advanced Settings on Mediation Policies"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "api-management/control-api-visibility",
+          "label": "Control API Visibility"
+        },
+        {
+          "type": "category",
+          "label": "Manage API Traffic",
+          "items": [
+            {
+              "type": "doc",
+              "id": "api-management/manage-api-traffic/assign-subscription-plans-to-apis",
+              "label": "Assign Subscription Plans to APIs"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/manage-api-traffic/subscribe-to-an-api-with-a-subscription-plan",
+              "label": "Subscribe to an API with a Subscription Plan"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "api-management/rename-api-display-name",
+          "label": "Rename API Display Name"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Monitoring and Insights",
+      "items": [
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/observability-overview",
+          "label": "Observability Overview"
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/alerts-overview",
+          "label": "Alert Overview"
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/incident-overview",
+          "label": "Incident Overview"
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/operational-insights-dashboard",
+          "label": "Operational Insights"
+        },
+        {
+          "type": "category",
+          "label": "Delivery Insights",
+          "items": [
+            {
+              "type": "doc",
+              "id": "monitoring-and-insights/delivery-insights/configure-delivery-insights",
+              "label": "Configure Delivery Insights"
+            },
+            {
+              "type": "doc",
+              "id": "monitoring-and-insights/delivery-insights/view-delivery-insights",
+              "label": "View Delivery Insights"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Usage Insights",
+          "items": [
+            {
+              "type": "doc",
+              "id": "monitoring-and-insights/insights-overview",
+              "label": "Insights Overview"
+            },
+            {
+              "type": "doc",
+              "id": "monitoring-and-insights/generate-custom-reports",
+              "label": "Generate Custom Reports"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/cost-optimization",
+          "label": "Cost Insights"
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/compliance",
+          "label": "Compliance"
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/view-logs",
+          "label": "View Logs"
+        },
+        {
+          "type": "category",
+          "label": "Work with the WSO2 Developer Platform Insights API",
+          "items": [
+            {
+              "type": "doc",
+              "id": "monitoring-and-insights/work-with-choreo-insights-api/access-the-choreo-insights-api",
+              "label": "Access the WSO2 Developer Platform Insights API"
+            },
+            {
+              "type": "doc",
+              "id": "monitoring-and-insights/work-with-choreo-insights-api/choreo-insights-api",
+              "label": "WSO2 Developer Platform Insights API"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "monitoring-and-insights/integrate-choreo-with-moesif",
+          "label": "Integrate WSO2 Developer Platform with Moesif"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform CLI",
+      "items": [
+        {
+          "type": "doc",
+          "id": "choreo-cli/choreo-cli-overview",
+          "label": "WSO2 Developer Platform CLI Overview"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-cli/get-started-with-the-choreo-cli",
+          "label": "Get Started with the WSO2 Developer Platform CLI"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-cli/manage-authentication-with-personal-access-tokens",
+          "label": "Manage Authentication with Personal Access Tokens"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Administer",
+      "items": [
+        {
+          "type": "doc",
+          "id": "administer/configure-access-control",
+          "label": "Configure Access Control"
+        },
+        {
+          "type": "doc",
+          "id": "administer/configure-a-custom-domain-for-your-organization",
+          "label": "Configure a Custom Domain for Your Organization"
+        },
+        {
+          "type": "doc",
+          "id": "administer/configure-enterprise-login",
+          "label": "Configure Enterprise Login"
+        },
+        {
+          "type": "category",
+          "label": "Configure an External IdP",
+          "items": [
+            {
+              "type": "doc",
+              "id": "administer/configure-an-external-idp/configure-asgardeo-as-an-external-idp",
+              "label": "Configure Asgardeo as an External IdP"
+            },
+            {
+              "type": "doc",
+              "id": "administer/configure-an-external-idp/configure-azure-ad-as-an-external-idp",
+              "label": "Configure Azure as an External IdP"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "administer/create-api-subscription-plans",
+          "label": "Create API Subscription Plans"
+        },
+        {
+          "type": "doc",
+          "id": "administer/configure-approvals-for-choreo-workflows",
+          "label": "Configure Approvals for WSO2 Developer Platform Workflows"
+        },
+        {
+          "type": "doc",
+          "id": "administer/review-workflow-approval-requests",
+          "label": "Review Workflow Approval Requests"
+        },
+        {
+          "type": "doc",
+          "id": "administer/configure-a-user-store-with-built-in-idp",
+          "label": "Configure a User Store with the Built-In Identity Provider"
+        },
+        {
+          "type": "category",
+          "label": "Developer Portal",
+          "items": [
+            {
+              "type": "doc",
+              "id": "administer/customize-the-developer-portal",
+              "label": "Customize the Developer Portal"
+            },
+            {
+              "type": "doc",
+              "id": "administer/configure-self-sign-up",
+              "label": "Configure Self-Sign-Up"
+            },
+            {
+              "type": "doc",
+              "id": "administer/configure-identity-providers-for-developer-portal",
+              "label": "Configure Identity Providers for Developer Portal"
+            },
+            {
+              "type": "doc",
+              "id": "administer/configure-exposed-environments-to-developer-portal",
+              "label": "Configure Exposed Environments to Developer Portal"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "administer/manage-members-of-an-organization",
+          "label": "Manage Members of an Organization"
+        },
+        {
+          "type": "doc",
+          "id": "administer/control-egress-traffic-for-your-organization",
+          "label": "Control Egress Traffic for Your Organization"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "References",
+      "items": [
+        {
+          "type": "doc",
+          "id": "references/faq",
+          "label": "FAQ"
+        },
+        {
+          "type": "doc",
+          "id": "references/choreo-limitations",
+          "label": "WSO2 Developer Platform Limitations"
+        },
+        {
+          "type": "doc",
+          "id": "references/troubleshoot-choreo",
+          "label": "Troubleshoot WSO2 Developer Platform"
+        },
+        {
+          "type": "doc",
+          "id": "references/private-data-plane-security-levels",
+          "label": "Private Data Plane Security Levels"
+        },
+        {
+          "type": "doc",
+          "id": "references/private-data-plane-management-models",
+          "label": "Private Data Plane Management Models"
+        },
+        {
+          "type": "doc",
+          "id": "references/choreo-platform-services-billing-and-upgrades",
+          "label": "WSO2 Developer Platform Service Billing and Upgrades"
+        }
+      ]
+    }
+  ]
+}

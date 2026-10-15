@@ -1,0 +1,98 @@
+---
+title: Develop an External Consumer (Deprecated)
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/develop-components/develop-an-external-consumer.md
+---
+
+# Develop an External Consumer (Deprecated)
+
+An external consumer in WSO2 Developer Platform is any client that can interact with services deployed in WSO2 Developer Platform, as an entity hosted outside of the WSO2 Developer Platform infrastructure. It is a generic component type that allows you to represent and manage any client, such as a mobile application, web application, server-to-server integration, bot, microservices, etc.
+
+In this guide, you will:
+
+ - Create an external consumer component.
+ - Manage authentication for the external consumer.
+ - Connect the external consumer to a service deployed in WSO2 Developer Platform.
+
+<Prerequisites>
+
+## Prerequisites
+
+Before you try out this guide, complete the following steps:
+
+- If you are signing in to the WSO2 Developer Platform Console for the first time, create an organization as follows:
+
+    1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/), and sign in using your preferred method.
+    2. Enter a unique organization name. For example, `Stark Industries`.
+    3. Read and accept the privacy policy and terms of use.
+    4. Click **Create**.
+
+    This creates the organization and opens the **Project Home** page of the default project created for you.
+
+</Prerequisites>
+
+<Steps>
+
+## Create an external consumer component {/* #step-1-create-an-external-consumer-component */}
+
+To create an external consumer component, follow the steps given below:
+
+1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/) and sign in. This opens the project home page.
+2. If you already have one or more components in your project, click **+ Create**. Otherwise, proceed to the next step.
+3. Click the **External Consumer** card.
+4. In the **Create an External Consumer** pane that opens, enter a display name, a unique name, and a description for the component.
+5. Click **Create**. This creates the component and takes you to its **Overview** page.
+
+## Manage authentication for the external consumer {/* #step-2-manage-authentication-for-the-external-consumer */}
+
+You can configure the external consumer to work with the WSO2 Developer Platform built-in identity provider or any external identity provider that supports OIDC/OAuth 2.0.
+
+Click the respective tab for details depending on the identity provider you want to configure:
+
+<Tabs>
+<TabItem value="tab-0" label="WSO2 Developer Platform built-in identity provider">
+
+
+ Follow the steps given below to configure the built-in identity provider by generating authentication keys:
+
+:::note
+
+ WSO2 Developer Platform built-in identity provider is configured by default. Therefore, this step is optional.
+
+:::
+
+ 1. In the **Overview** page of the component, under **Authentication Configurations**, click **Configure** corresponding to the environment for which you want to configure an identity provider.
+ 2. In the **Identity Provider** list, select **WSO2 Developer Platform Built-In Identity Provider**.
+ 3. Click **Generate Keys**.
+
+    :::note
+
+     If you see **Regenerate Secret** instead of **Generate Keys**, it indicates that OAuth keys are already generated for the component in the selected environment.
+
+    :::
+
+</TabItem>
+<TabItem value="tab-1" label="An external identity provider">
+
+
+ **Step 2.1: Create and configure an OIDC/OAuth 2.0 application in the external identity provider**
+
+ 1. Create an OIDC/OAuth 2.0 application in your external identity provider.
+ 2. Configure the OIDC/OAuth 2.0 application accordingly. (The access token type should be configured as JWT)
+
+ **Step 2.2: Link the OIDC/OAuth 2.0 application to the WSO2 Developer Platform component**
+
+ 3. In the **Overview** page of the component, under **Authentication Configurations**, click **Configure** corresponding to the environment for which you want to configure an identity provider.
+ 4. In the **Identity Provider** list, select your identity provider.
+ 5. Paste the **Client ID** of the OIDC/OAuth 2.0 application you created in your external identity provider.
+ 6. Click **Add Keys**.
+
+</TabItem>
+</Tabs>
+
+## Connect the external consumer to a service deployed in WSO2 Developer Platform {/* #step-3-connect-the-external-consumer-to-a-service-deployed-in-wso2-developer-platform */}
+
+To establish connections from the external consumer to services deployed in WSO2 Developer Platform, you can create connections. For step-by-step instructions on creating a connection, see [Create a Connection](./sharing-and-reusing/create-a-connection.mdx).
+
+</Steps>

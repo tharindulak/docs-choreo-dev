@@ -1,0 +1,108 @@
+---
+title: Develop Web Applications Locally with WSO2 Developer Platform’s Managed Authentication
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/develop-components/develop-web-applications/develop-web-applications-locally-with-managed-authentication.md
+---
+
+# Develop Web Applications Locally with WSO2 Developer Platform’s Managed Authentication
+
+WSO2 Developer Platform’s managed authentication capability provides a set of backend for frontend (BFF) endpoints to facilitate authentication and authorization for web applications. These endpoints are readily available for single-page web applications deployed on WSO2 Developer Platform.
+
+As a web application developer, you may need to run the application on your local workstation. WSO2 Developer Platform’s local development capability ensures that authentication and authorization during local development work the same way as they do when the application is deployed to WSO2 Developer Platform, eliminating the need for code changes.
+
+This guide explains how to configure and use WSO2 Developer Platform’s local development capability to streamline your workflow.
+
+## How local development works in WSO2 Developer Platform
+
+Local development uses a proxy that sits in front of the locally running web application. This proxy intercepts all incoming requests:
+- Requests to `/WSO2 Developer Platform-apis/*` and `/auth/*` are forwarded to WSO2 Developer Platform.
+- All other requests are forwarded to the locally running web application.
+
+The proxy runs on HTTPS using a self-signed certificate, which is essential for secure, HTTP-only cookie-based managed authentication. Once the proxy is running, you can access the web application using the proxy's URL and start developing locally. The behavior of the web application, in terms of managed authentication, will mirror its behavior when deployed to WSO2 Developer Platform.
+
+## Configure local development
+
+<Prerequisites>
+
+### Prerequisites
+
+- Create a single-page application (SPA) with managed authentication enabled. For details, see [Secure Web Applications with Managed Authentication](../../authentication-and-authorization/secure-web-applications-with-managed-authentication.mdx#step-1-set-up-managed-authentication-for-your-web-application).
+- Promote and deploy the application to the environment where you want to enable local development.
+
+    :::note
+
+    - The locally running web application will use the same managed authentication configuration as the environment where local development is configured.
+    - Local development is only allowed in non-critical environments.
+
+    :::
+
+</Prerequisites>
+
+### Apply configurations
+
+1. Sign in to the WSO2 Developer Platform Console.
+2. In the **Component Listing** pane, click on the component you created and deployed.
+3. In the left navigation menu, click **Deploy**.
+4. Go to the respective environment card and click **Local Development**.
+5. In the **Local Development** pane, toggle **Local Development** to enable it.
+6. (Optional) To update the port on which the local development proxy server runs, expand **Advanced Configurations** and specify a value for **Proxy Port**.
+7. Click **Apply**.
+
+You have now configured local development. The next section explains how to access your web application for local development.
+
+## Access your web application locally
+
+<Prerequisites>
+
+### Prerequisites
+
+- Ensure local development is enabled in the desired environment.
+- Ensure your web application is running locally on `http://localhost` on a specific port.
+
+</Prerequisites>
+
+### Access your web application locally
+
+You can use either the WSO2 Developer Platform built-in identity provider or an external identity provider to access your web application locally.
+
+<Tabs>
+<TabItem value="tab-0" label="Use the WSO2 Developer Platform built-in identity provider">
+
+
+1. Sign in to the WSO2 Developer Platform Console.
+2. In the **Component Listing** pane, click on the component you created and deployed.
+3. In the left navigation menu, click **Deploy**.
+4. Go to the respective environment card and click **Local Development**.
+5. In the **Local Development** pane, copy the command under **Step 1**.
+6. Paste the command in a terminal, replace `[APP_PORT]` with the port on which your application is running locally, and run the command.
+7. To access the application, go to the URL provided under **Step 2** in the **Local Development** pane.
+
+    :::note
+
+    The local development proxy runs on HTTPS using a self-signed certificate. Your browser may warn that the certificate is not valid. Accept the risk and proceed.
+
+    :::
+
+</TabItem>
+<TabItem value="tab-1" label="Use an external identity provider">
+
+
+1. Sign in to the WSO2 Developer Platform Console.
+2. In the **Component Listing** pane, click on the component you created and deployed.
+3. In the left navigation menu, click **Deploy**.
+4. Go to the respective environment card and click **Local Development**.
+5. In the **Local Development** pane, copy the redirect URLs under **Step 1**.
+6. Go to the settings in the OAuth application in your identity provider and specify the copied URLs as allowed redirect URLs.
+7. In the **Local Development** pane, copy the command under **Step 2**.
+8. Paste the command in a terminal, replace `[APP_PORT]` with the port on which your application is running locally, and run the command.
+9. To access the application, go to the URL provided under **Step 3** in the **Local Development** pane.
+
+    :::note
+
+    The local development proxy runs on HTTPS using a self-signed certificate. Your browser may warn that the certificate is not valid. Accept the risk and proceed.
+
+    :::
+
+</TabItem>
+</Tabs>

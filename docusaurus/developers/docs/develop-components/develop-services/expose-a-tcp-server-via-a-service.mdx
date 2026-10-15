@@ -1,0 +1,300 @@
+---
+title: Expose a TCP Server via a Service
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/develop-components/develop-services/expose-a-tcp-server-via-a-service.md
+---
+
+# Expose a TCP Server via a Service
+
+WSO2 Developer Platform offers the flexibility to design and deploy applications in the programming language of your choice. One viable choice for specific network communication needs is TCP (Transmission Control Protocol). TCP provides a reliable, stream-oriented communication mechanism that ensures data integrity and orderliness during transmission. It's the go-to option for scenarios where guaranteed data delivery and error recovery are paramount.
+
+In this guide, you will learn to use WSO2 Developer Platform to create a service component that exposes a TCP server implemented in [Go](https://go.dev/), enabling efficient and scalable communication with any TCP client application. No prior knowledge of the Go language is necessary to follow this guide.
+
+By following this guide, you will:
+
+- Setup a TCP server
+    - Create a simple TCP server using a service component.
+    - Link the containerized TCP service to the WSO2 Developer Platform component using a Dockerfile.
+    - Deploy the TCP server component in WSO2 Developer Platform.
+- Setup a TCP client
+    - Create a TCP client using a manual task component.
+    - Link the containerized TCP client to the WSO2 Developer Platform component using a Dockerfile.
+    - Deploy the TCP client component in WSO2 Developer Platform.
+- Invoke the TCP server using a TCP client and observe the response through the WSO2 Developer Platform log view.
+
+<Prerequisites>
+
+## Prerequisites
+
+Before you try out this guide, complete the following:
+
+- If you are signing in to the WSO2 Developer Platform Console for the first time, create an organization as follows:
+
+    1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/), and sign in using your preferred method.
+    2. Enter a unique organization name. For example, `Stark Industries`.
+    3. Read and accept the privacy policy and terms of use.
+    4. Click **Create**.
+
+    This creates the organization and opens the **Project Home** page of the default project created for you.
+
+- Fork the [WSO2 Developer Platform samples repository](https://github.com/wso2/choreo-samples/), which contains the [sample service](https://github.com/wso2/choreo-samples/tree/main/docker-tcp-service) implementation for this guide.
+
+Let's get started!
+
+### Learn the repository file structure
+
+It is important to understand the purpose of the key files in the sample service. The following table provides a brief overview of each file in the sample service.
+
+:::note
+
+The following file paths are relative to the path `<sample-repository-dir>/docker-tcp-service`.
+
+:::
+
+|File Path                 |Description                                                                                   |
+|--------------------------|----------------------------------------------------------------------------------------------|
+| `server/main.go`         | The greeter service code written in the Go language.                                         |
+| `client/main.go`         | The greeter client application written in the Go language.                                   |
+| `Dockerfile.server`      | The Dockerfile to build the container image of the server application.                       |
+| `Dockerfile.client`      | The Dockerfile to build the container image of the client application.                       |
+| `.choreo/component.yaml` | The WSO2 Developer Platform-specific configuration provides information about how WSO2 Developer Platform exposes the service. |
+
+### Configure the service port with endpoints
+
+In WSO2 Developer Platform, you can expose your services via endpoints.
+
+Let's run the TCP server service component on port 5050. To securely expose the service through WSO2 Developer Platform, you must provide the port and other required information to WSO2 Developer Platform. For detailed information on each attribute of an endpoint, see [Configure Endpoints](../configure-endpoints.mdx).
+
+WSO2 Developer Platform looks for an `component.yaml` file inside the `.choreo` directory to configure the endpoint details of a containerized component. Place the `.choreo` directory at the root of the Docker build context path.
+
+In our TCP server sample, the `component.yaml` file is at `docker-tcp-service/.choreo/component.yaml`, where the build context path is `docker-tcp-service`.
+
+</Prerequisites>
+
+<Steps>
+
+## Create a service component with a TCP endpoint {/* #step-1-create-a-service-component-with-a-tcp-endpoint */}
+
+To create a containerized service component, follow these steps:
+
+1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/) and sign in. This opens the project home page.
+2. If you already have one or more components in your project, click **+ Create**. Otherwise, proceed to the next step.
+3. Click the **Service** card.
+4. To allow WSO2 Developer Platform to connect to your GitHub account, click **Authorize with GitHub**. If you have not already connected your GitHub repository to WSO2 Developer Platform, enter your GitHub credentials and select the repository you created in the prerequisites section to install the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps).
+
+    Alternatively, select the **Use Public GitHub Repository** option and paste the [WSO2 Developer Platform samples repository](https://github.com/wso2/choreo-samples) URL in the **Provide Repository URL** field to connect to it without requiring authorization from the [WSO2 Developer Platform Apps](https://github.com/marketplace/choreo-apps) GitHub application. However, authorizing the repository with the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps) is necessary if you want to enable [**Auto Deploy**](../../choreo-concepts/ci-cd.mdx#deploy) for the component.
+
+    :::note
+
+       The **WSO2 Developer Platform GitHub App** requires the following permissions:
+
+       - Read and write access to code and pull requests.
+       - Read access to issues and metadata.
+
+       You can [revoke access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-authorized-integrations#reviewing-your-authorized-github-apps) if you do not want WSO2 Developer Platform to have access to your GitHub account. However, write access is exclusively utilized for sending pull requests to a user repository. WSO2 Developer Platform will not directly push any changes to a repository.
+
+    :::
+
+5. Under **Connect a Git Repository**, enter the following information:
+
+    | **Field**               | **Value**               |
+    |-------------------------|-------------------------|
+    | **Organization**        | Your GitHub account     |
+    | **GitHub Repository**   | **`WSO2 Developer Platform-samples`**    |
+    | **Branch**              | **`main`**              |
+    | **Component Directory** | `docker-tcp-service`                  |
+
+6. Select **Docker** as the build preset.
+7. Enter the following information:
+
+    | **Field**                | **Value**                             |
+    |--------------------------|---------------------------------------|
+    | **Dockerfile**           | `docker-tcp-service/Dockerfile.server`|
+
+    :::info
+
+    1.  To successfully build your container with WSO2 Developer Platform, it is essential to explicitly define a User ID (UID) under the USER instruction in your Dockerfile. For reference, see the [sample Dockerfile](https://github.com/wso2/choreo-samples/blob/main/docker-tcp-service/Dockerfile.server).
+    To ensure that the defined USER instruction is valid, it must conform to the following conditions:
+        - A valid User ID is a numeric value between 10000-20000, such as `10001` or `10500`.
+        - Usernames are considered invalid and should not be used. For example, `my-custom-user-12221` or `my-custom-user` are invalid User IDs.
+
+    2. The Dockerfile utilized in this guide is a multi-stage Dockerfile, which is designed to keep the final image size small and provides the ability to build the application with a specific version of tools and libraries.
+
+    :::
+
+8. Enter a display name, a unique name, and a description for the service component. You can enter the values given below:
+
+    :::info
+
+     In the **Component Name** field, you must specify a name to uniquely identify the component in various contexts. The value is editable only at the time you create the component. You cannot change the name after you create the component.
+
+    :::
+
+    | **Field**                 | **Value**               |
+    |---------------------------|-------------------------|
+    | **Component Display Name**| `Go TCP Server`         |
+    | **Component Name**        | `go-tcp-server`         |
+    | **Description**           | Send greetings          |
+
+9. Click **Create**. This creates the component and takes you to the **Overview** page of the component.
+
+You have successfully created a service from a Dockerfile. Next, you can build and deploy the service.
+
+## Build and deploy {/* #step-2-build-and-deploy */}
+
+Now that you have connected the source repository, and configured the endpoint details, it's time to build the service and create an image. Then you can deploy the image and test the service.
+
+<Steps>
+
+### Build {/* #step-21-build */}
+
+To build the service, follow these steps:
+
+1. In the left navigation menu, click **Build**.
+2. On the **Build** page, click **Build Latest**.
+
+    :::note
+
+    Building the service component may take a while. You can track the progress via the logs in the **Build Details** pane. Once the build process is complete, the build status changes to **Success**.
+
+    :::
+
+    You can access the following scans under **Build**.
+
+      - **The Dockerfile scan**: WSO2 Developer Platform performs a scan to check if a non-root user ID is assigned to the Docker container to ensure security. If no non-root user is specified, the build will fail.
+      - **Container (Trivy) vulnerability scan**: This detects vulnerabilities in the final docker image.
+      - **Container (Trivy) vulnerability scan**: The details of the vulnerabilities open in a separate pane. If this scan detects critical vulnerabilities, the build will fail.
+
+        :::info
+
+        If you have WSO2 Developer Platform environments on a private data plane, you can ignore these vulnerabilities and proceed with the deployment.
+
+        :::
+
+### Deploy {/* #step-22-deploy */}
+
+To deploy the service, follow these steps:
+
+1. In the left navigation menu, click **Deploy**.
+2. On the **Set Up** card, click **Configure &  Deploy**.
+3. In the **Environment Configurations** pane that opens, click **Next** to skip the configuration.
+4. In the **File Mount** pane, click **Next** to skip the configuration.
+5. Review the **Endpoint Details** and click **Deploy**.
+
+    :::note
+
+    Deploying the service component may take a while. Once deployed, the **Development** environment card indicates the **Deployment Status** as **Active**.
+
+    :::
+
+6. Once you have successfully deployed your service, navigate to the component overview page and copy the TCP service address. You need to provide that address when setting up the client application later in this guide.
+
+You have successfully deployed the TCP server. Currently, the TCP service is only accessible by the components deployed within the same project.
+
+</Steps>
+
+## Invoke the TCP service {/* #step-3-invoke-the-tcp-service */}
+
+Now let's use a TCP client to invoke the TCP service that you created above. To do this, you can create a manual trigger component as the TCP client. This is the recommended approach because, in this example, it's more efficient to have a client that connects to the server, sends a request, and then stops. Here, a continuously executing task isn't required. Furthermore, if you use a manual trigger component, you won't need to expose an endpoint in the client for invocation, unlike with an API.
+
+<Steps>
+
+### Create a manual trigger for the TCP client {/* #step-31-create-a-manual-trigger-for-the-tcp-client */}
+
+To create a manual task component, follow these steps:
+
+1. On the WSO2 Developer Platform Console header, click the **Project** list and select the project where you created the TCP service component. This opens the project home page.
+2. Go to the **Component Listing** section and click **+ Create**.
+3. Click the **Manual Task** card.
+4. To allow WSO2 Developer Platform to connect to your GitHub account, click **Authorize with GitHub**. If you have not already connected your GitHub repository to WSO2 Developer Platform, enter your GitHub credentials and select the repository you created in the prerequisites section to install the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps).
+
+    Alternatively, select the **Use Public GitHub Repository** option and paste the [WSO2 Developer Platform samples repository](https://github.com/wso2/choreo-samples) URL in the **Provide Repository URL** field to connect to it without requiring authorization from the [WSO2 Developer Platform Apps](https://github.com/marketplace/choreo-apps) GitHub application. However, authorizing the repository with the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps) is necessary if you want to enable [**Auto Deploy**](../../choreo-concepts/ci-cd.mdx#deploy) for the component.
+
+    :::note
+
+       The **WSO2 Developer Platform GitHub App** requires the following permissions:
+
+       - Read and write access to code and pull requests.
+       - Read access to issues and metadata.
+
+       You can [revoke access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-authorized-integrations#reviewing-your-authorized-github-apps) if you do not want WSO2 Developer Platform to have access to your GitHub account. However, write access is exclusively utilized for sending pull requests to a user repository. WSO2 Developer Platform will not directly push any changes to a repository.
+
+    :::
+
+5. Under **Connect a Git Repository**, enter the following information:
+
+    | **Field**               | **Value**               |
+    |-------------------------|-------------------------|
+    | **Organization**        | Your GitHub account     |
+    | **GitHub Repository**   | **`WSO2 Developer Platform-samples`**    |
+    | **Branch**              | **`main`**              |
+    | **Docker Context**      |`docker-tcp-service`     |
+
+6. Select **Docker** as the build preset.
+7. Enter the following information:
+
+    | **Field**                | **Value**                             |
+    |--------------------------|---------------------------------------|
+    | **Dockerfile**           | `docker-tcp-service/Dockerfile.client`|
+
+8. Enter a display name, a unique name, and a description for the component. You can enter the values given below:
+
+    :::info
+
+     In the **Component Name** field, you must specify a name to uniquely identify the component in various contexts. The value is editable only at the time you create the component. You cannot change the name after you create the component.
+
+    :::
+
+    | **Field**                 | **Value**              |
+    |---------------------------|------------------------|
+    | **Component Display Name**| `Go TCP Client`        |
+    | **Component Name**        | `go-tcp-client`        |
+    | **Description**           | `Receive greetings`    |
+
+
+9. Click **Create**. This creates the component and takes you to the **Overview** page of the component.
+
+### Build the TCP client component {/* #step-32-build-the-tcp-client-component */}
+
+To build the component, follow these steps:
+
+1. In the left navigation menu, click **Build**.
+2. On the **Build** page, click **Build Latest**.
+
+    :::note
+
+    Building the service component may take a while. You can track the progress via the logs in the **Build Details** pane. Once the build process is complete, the build status changes to **Success**.
+
+    :::
+
+### Setup environment variables and deploy the TCP client {/* #step-33-setup-environment-variables-and-deploy-the-tcp-client */}
+
+The client application, in this case, the TCP client, requires the server URL of the TCP server service. This is read from the client application as an environment variable. Follow the steps below to configure the environment variable for the client application:
+
+1. On the WSO2 Developer Platform Console left navigation menu, click **Deploy**.
+2. In the **Set Up** card, click **Configure & Deploy**.
+3. In the **Environment Configurations** pane that opens, click **+ Add**.
+4. Specify the following name and value to configure the environment variable for the client application:
+
+    | **Field**       | **Value**               |
+    |-----------------|-------------------------|
+    | **Name**        | `SERVER_ADDRESS`       |
+    | **Value**       | Paste the URL value copied after deploying the TCP service via [step 2.2](#step-22-deploy) above.  Make sure to **drop the `tcp://` part and the trailing `/` from the URL when copying**. For example, add only `go-tcp-server-1097922445:8080`.|
+
+5.  Click **Add** and then click **Next**.
+6.  Click **Deploy**.
+
+### Execute the TCP client component {/* #step-34-execute-the-tcp-client-component */}
+
+To execute the TCP client, follow these steps:
+
+1. In the left navigation menu, click **Execute**.
+2. Click **Run Now**. This triggers the TCP client and generates logs.
+   You can trigger multiple runs to generate multiple logs.
+
+For details on what you can monitor via the execute page, see [Monitor executions](../develop-integrations/develop-a-manual-task.mdx#step-7-monitor-executions).
+
+</Steps>
+
+</Steps>

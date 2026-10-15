@@ -1,0 +1,125 @@
+---
+title: Deploy Your First Static Web Application
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/quick-start-guides/deploy-your-first-static-web-application.md
+---
+
+# Deploy Your First Static Web Application
+
+WSO2 Developer Platform is an internal developer platform as a service that simplifies building, deploying, monitoring, and managing cloud-native applications. It allows developers to focus on innovation and implementation by handling platform complexities.
+
+In this guide, you will learn how to deploy a static web application using WSO2 Developer Platform. The sample application is a simple to-do list where users can add tasks.
+
+This guide walks you through the following steps:
+
+1. Create a project (optional).
+2. Create a Web Application component and connect it to a GitHub repository.
+3. Build the web application.
+4. Deploy the web application and access it.
+
+For a video tutorial, see [Deploy a Static Web App on WSO2 Developer Platform](https://www.youtube.com/watch?v=YPBSuLG5l5g).
+
+<Prerequisites>
+
+## Prerequisites
+
+1. GitHub account: Fork the [WSO2 Developer Platform-sample-todo-list-app repository](https://github.com/wso2/choreo-sample-todo-list-app), which contains the sample for this guide.
+
+2. If you're signing in to the WSO2 Developer Platform Console for the first time, create an organization:
+    1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/) and sign in using your Google, GitHub, or Microsoft account.
+    2. Enter a unique organization name. For example, `Stark Industries`.
+    3. Read and accept the privacy policy and terms of use.
+    4. Click **Create**.
+
+    This creates the organization and opens the **Project Home** page of the default project created for you.
+
+</Prerequisites>
+
+<Steps>
+
+## Create a project (optional) {/* #step-1-create-a-project-optional */}
+
+WSO2 Developer Platform creates a default project for you when you create an organization. You can use that project for this guide and go straight to step 2. Follow the steps below only if you want to create a separate project:
+
+1. Go to the [WSO2 Developer Platform Console](https://console.choreo.dev/) and sign in, then go to the organization home page.
+2. On the organization home page, click **+ Create Project**.
+3. Enter the following details:
+
+    :::tip
+
+    The **Name** field must be unique and cannot be changed after creation.
+
+    :::
+
+    | **Field**                | **Value**             |
+    |--------------------------|-----------------------|
+    | **Project Display Name** | Sample project        |
+    | **Name**                 | sample-project        |
+    | **Project Description**  | My sample project     |
+
+4. Click **Create**. This creates the project and opens the project home page.
+
+## Create a web application component {/* #step-2-create-a-web-application-component */}
+
+1. On the project home page, click **Web Application** under **Create a Component**.
+2. Select **Authorize with GitHub** from the **Connect a Git Repository** section to connect WSO2 Developer Platform to your GitHub account. If you haven't connected your GitHub repository to WSO2 Developer Platform, enter your credentials and select the repository you forked earlier to install the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps).
+
+    Alternatively, paste the [WSO2 Developer Platform-sample-todo-list-app repository](https://github.com/wso2/choreo-sample-todo-list-app) URL in the **Provide Repository URL** field. However, enabling [**Auto Deploy**](../choreo-concepts/ci-cd.mdx#deploy) requires authorizing the repository with the [WSO2 Developer Platform GitHub App](https://github.com/marketplace/choreo-apps).
+
+    :::note
+
+    The **WSO2 Developer Platform GitHub App** requires:
+    - Read and write access to code and pull requests.
+    - Read access to issues and metadata.
+
+    You can [revoke access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-authorized-integrations#reviewing-your-authorized-github-apps) at any time. Write access is only used for sending pull requests; WSO2 Developer Platform will not push changes directly to your repository.
+
+    :::
+
+3. Enter the following information:
+
+    | **Field**                    | **Value**                   |
+    |------------------------------|-----------------------------|
+    | **Organization**             | Your GitHub account         |
+    | **Repository**               | WSO2 Developer Platform-sample-todo-list-app |
+    | **Branch**                   | main                        |
+
+4. Select **NodeJS** as the **Build preset**.
+5. Enter the following details:
+
+    | **Field**                    | **Value**                   |
+    |------------------------------|-----------------------------|
+    | **NodeJS Project Directory** | /                           |
+    | **Language Version**         | 20.x.x                      |
+    | **Port**                     | 8080                        |
+
+6. Enter a unique name and description for the web application.
+
+7. Click **Create**. WSO2 Developer Platform initializes the component with the sample implementation and opens the **Overview** page of the component.
+
+Now let's build and deploy the web application.
+
+## Build your web application {/* #step-3-build-your-web-application */}
+
+1. In the left navigation menu, click **Build**.
+2. In the **Builds** pane, click **Build Latest**.
+
+    :::note
+
+    The build process may take some time. You can track progress in the **Build Details** pane. Once complete, the build status changes to **Success**.
+
+    :::
+
+Now you can proceed to deploy your web application.
+
+## Deploy and access your web application {/* #step-4-deploy-and-access-your-web-application */}
+
+1. In the left navigation menu, click **Deploy**.
+2. In the **Set Up** card, click **Configure and Deploy**. This opens the **Configure & Deploy** pane. In this guide, you do not need to add a file mount.
+3. Click **Deploy**. The deployment to the Development environment may take a few minutes. Once complete, the **Deployment Status** will show as **Active** in the **Development** card.
+4. To verify that the web application is hosted successfully, click the **Web App URL** on the **Development** card. This takes you to the web application. You can try adding tasks by specifying a task ID and task label.
+
+After successfully testing your web application, explore other WSO2 Developer Platform features like [observability](../monitoring-and-insights/observability-overview.mdx) and [DevOps](../devops-and-ci-cd/view-runtime-details.mdx).
+
+</Steps>

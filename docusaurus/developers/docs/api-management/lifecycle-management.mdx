@@ -1,0 +1,53 @@
+---
+title: Lifecycle Management
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-docs/docs/api-management/lifecycle-management.md
+---
+
+# Lifecycle Management
+
+API lifecycle management is an important aspect of API management. The API lifecycle consists of various states that an API passes through, from creation to retirement. In WSO2 Developer Platform, there are five distinct lifecycle states: created, pre-released, published, deprecated, and retired.
+
+By leveraging the various lifecycle states, API managers can optimize the development process and ensure that subscribers have access to the latest and most reliable APIs.
+
+## API lifecycle states
+
+The following lifecycle states are applicable to APIs in WSO2 Developer Platform:
+
+| **API lifecycle state** | **Use case** | **Corresponding action** |
+|-----------------------|------------|-----------|
+| **CREATED** | The API is created but is not ready for consumption.| The API is not visible to subscribers in the Developer Portal.|
+| **PRE-RELEASED** | A prototype is created for early promotion and consumer testing. You can deploy a new API or a new version of an existing API as a prototype to provide subscribers with an early implementation of the API.|The API is published to the Developer Portal as a pre-release.|
+| **PUBLISHED** | The API is ready for subscribers to view and subscribe to via the Developer Portal| The API is visible in the Developer Portal and is available for subscription.|
+| **DEPRECATED** | The API is nearing the end of its lifecycle and is being phased out of use.| The API remains accessible to existing subscribers, but new subscriptions are disabled in the Developer Portal. **Note**: Deprecation is irreversible and cannot be reverted to the Published state.|
+| **RETIRED** | The API is no longer in use when it is in this state.| The API is unpublished and deleted from the Developer Portal.|
+
+## Versioning impact on API lifecycle
+
+When you create a new version of an API, it directly affects the lifecycle state of existing versions:
+
+- **Minor version upgrades** (e.g., v1.0 → v1.1): when a new minor version is published, it becomes the default version for its corresponding major version. The Developer Portal displays the latest minor version (for example, v1.1) as the primary API under that major version (v1), and the /v1 endpoint resolves to this version.
+
+- **Major version upgrades** (e.g., v1 → v2): Both major versions appear as **separate entries** in the Developer Portal. The older major version remains in its current lifecycle state and is not automatically deprecated.
+
+:::note
+
+Previously published minor versions (for example, v1.0) remain accessible via their version-specific endpoints (for example, /v1.0) and continue to be available until they are explicitly deprecated or retired through the API lifecycle management process.
+
+:::
+
+## Manage the lifecycle of an API
+
+To change the lifecycle state of an API via the WSO2 Developer Platform Console, follow the instructions given below:
+
+:::tip
+
+ You must have publishing privileges to manage the lifecycle states of a component.
+
+:::
+
+1. Sign in to the WSO2 Developer Platform Console.
+2. In the **Component Listing** pane, click on the component for which you want to manage the lifecycle.
+3. In the left navigation menu, click **Manage**, and then click **Lifecycle**.
+4. In the **Lifecycle Management** pane, you will see the lifecycle state transition diagram indicating the current lifecycle state of the component. The possible lifecycle states you can apply to the component are displayed just above the diagram. Click on a required lifecycle state to apply it to the component. For example, if a component is in the **Created** state, you can click either **Pre-release** or **Publish**.
