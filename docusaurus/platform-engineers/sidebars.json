@@ -1,0 +1,672 @@
+{
+  "docs": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "Home"
+    },
+    {
+      "type": "category",
+      "label": "Introduction",
+      "items": [
+        {
+          "type": "doc",
+          "id": "what-is-choreo",
+          "label": "What is WSO2 Developer Platform?"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform Concepts",
+      "items": [
+        {
+          "type": "doc",
+          "id": "choreo-concepts/resource-hierarchy",
+          "label": "Resource Hierarchy"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/organization",
+          "label": "Organization"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/data-planes",
+          "label": "Data Planes"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/environments",
+          "label": "Environments"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/ci-cd",
+          "label": "CI/CD"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/choreo-marketplace",
+          "label": "WSO2 Developer Platform Marketplace"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/project",
+          "label": "Project"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/component",
+          "label": "Component"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/deployment-tracks",
+          "label": "Deployment Tracks"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/endpoint",
+          "label": "Endpoint"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/connections",
+          "label": "Connections"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-concepts/access-control",
+          "label": "Access Control"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Infrastructure",
+      "items": [
+        {
+          "type": "doc",
+          "id": "infrastructure/dataplanes/data-planes",
+          "label": "Data Planes"
+        },
+        {
+          "type": "category",
+          "label": "Environments",
+          "items": [
+            {
+              "type": "doc",
+              "id": "infrastructure/environments/manage-environments",
+              "label": "Manage Environments"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Domains",
+          "items": [
+            {
+              "type": "doc",
+              "id": "infrastructure/domains/configure-a-custom-domain-for-your-organization",
+              "label": "Configure a Custom Domain for Your Organization"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "infrastructure/configure-vpns-on-the-choreo-cloud-data-plane",
+          "label": "Configure VPNs on Cloud Data Plane"
+        },
+        {
+          "type": "category",
+          "label": "Credentials",
+          "items": [
+            {
+              "type": "doc",
+              "id": "infrastructure/credentials/set-up-git-provider-authentication-for-choreo-deployments",
+              "label": "Set Up Git Provider Authentication"
+            },
+            {
+              "type": "doc",
+              "id": "infrastructure/credentials/use-your-own-container-registry",
+              "label": "Use Your Own Container Registry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "User Management",
+      "items": [
+        {
+          "type": "category",
+          "label": "Users",
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-management/users/manage-members-of-an-organization",
+              "label": "Manage  Members of an Organization"
+            },
+            {
+              "type": "doc",
+              "id": "user-management/users/configure-enterprise-login",
+              "label": "Configure Enterprise Login"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Groups & Roles",
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-management/groups-and-roles/configure-access-control",
+              "label": "Configure Access Control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "DevOps",
+      "items": [
+        {
+          "type": "category",
+          "label": "Automation Pipelines",
+          "items": [
+            {
+              "type": "doc",
+              "id": "devops/automation-pipelines/introduction",
+              "label": "What are Automation Pipelines"
+            },
+            {
+              "type": "doc",
+              "id": "devops/automation-pipelines/manage-automation-pipeline",
+              "label": "Manage Automation Pipelines"
+            },
+            {
+              "type": "doc",
+              "id": "devops/automation-pipelines/run-automation-pipeline",
+              "label": "Run Automation Pipelines"
+            },
+            {
+              "type": "doc",
+              "id": "devops/automation-pipelines/inbuilt-templates",
+              "label": "Inbuilt Pipeline Templates"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "CI Pipelines",
+          "items": [
+            {
+              "type": "doc",
+              "id": "devops/ci-pipelines/configure-ci-pipeline",
+              "label": "Configure CI Pipeline"
+            },
+            {
+              "type": "doc",
+              "id": "devops/ci-pipelines/integrate-unit-tests-into-the-build-pipeline",
+              "label": "Integrate Unit Tests into the CI Pipeline"
+            },
+            {
+              "type": "doc",
+              "id": "devops/ci-pipelines/configure-mirror-registry-for-in-dataplane-builds",
+              "label": "Configure a Mirror Registry for In-Dataplane Builds"
+            },
+            {
+              "type": "doc",
+              "id": "devops/ci-pipelines/ci-pipeline-logs",
+              "label": "CI Pipeline logs"
+            },
+            {
+              "type": "category",
+              "label": "Customize CI Pipeline",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "devops/ci-pipelines/customizable-ci/introduction",
+                  "label": "Introduction"
+                },
+                {
+                  "type": "doc",
+                  "id": "devops/ci-pipelines/customizable-ci/author-pipeline-yaml",
+                  "label": "Author pipeline.yaml"
+                },
+                {
+                  "type": "doc",
+                  "id": "devops/ci-pipelines/customizable-ci/built-in-steps",
+                  "label": "Built-in steps"
+                },
+                {
+                  "type": "doc",
+                  "id": "devops/ci-pipelines/customizable-ci/manage-customizable-ci-pipeline",
+                  "label": "Manage customizable CI pipelines"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "CD Pipelines",
+          "items": [
+            {
+              "type": "doc",
+              "id": "devops/cd-pipelines/deploying-application-using-choreo-cd-pipeline",
+              "label": "Deploy Applications using WSO2 Developer Platform CD Pipeline"
+            },
+            {
+              "type": "doc",
+              "id": "devops/cd-pipelines/manage-continuous-deployment-pipelines",
+              "label": "Manage CD Pipelines"
+            },
+            {
+              "type": "doc",
+              "id": "devops/cd-pipelines/submit-and-manage-environment-promotion-approval-requests",
+              "label": "Submit Environment Promotion Approval Requests"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "devops/manage-configuration-groups",
+          "label": "Manage Configuration Groups"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Governance",
+      "items": [
+        {
+          "type": "category",
+          "label": "Workflows",
+          "items": [
+            {
+              "type": "doc",
+              "id": "governance/workflows/configure-approvals-for-choreo-workflows",
+              "label": "Configure Approvals for WSO2 Developer Platform Workflows"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Egress Control",
+          "items": [
+            {
+              "type": "doc",
+              "id": "governance/egress-control/control-egress-traffic-for-your-organization",
+              "label": "Control Egress Traffic for Your WSO2 Developer Platform Organization"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Approvals",
+          "items": [
+            {
+              "type": "doc",
+              "id": "governance/approvals/review-workflow-approval-requests",
+              "label": "Review Workflow Approval Requests"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "governance/guideline-documents/architect-agent-guideline-documents",
+          "label": "Guideline Documents"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "DB & Services",
+      "items": [
+        {
+          "type": "category",
+          "label": "Database & Vector Databases",
+          "items": [
+            {
+              "type": "doc",
+              "id": "db-and-services/databases/choreo-managed-databases-and-caches",
+              "label": "Overview"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/databases/choreo-managed-postgresql-databases",
+              "label": "PostgreSQL"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/databases/choreo-managed-mysql-databases",
+              "label": "MySQL"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/databases/choreo-managed-caches",
+              "label": "WSO2 Developer Platform-Managed Cache"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/databases/add-choreo-managed-databases-and-caches-to-the-marketplace",
+              "label": "Add WSO2 Developer Platform-Managed Databases and Caches to the Marketplace"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "db-and-services/external-services/integrate-and-manage-third-party-services",
+          "label": "Third-Party Services"
+        },
+        {
+          "type": "category",
+          "label": "Message Brokers",
+          "items": [
+            {
+              "type": "doc",
+              "id": "db-and-services/message-brokers/choreo-managed-message-brokers",
+              "label": "Overview"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/message-brokers/create-choreo-managed-kafka-services",
+              "label": "Create WSO2 Developer Platform-Managed Kafka Services"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/message-brokers/configure-a-kafka-service",
+              "label": "Configure a Kafka Service"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/message-brokers/monitor-a-kafka-service",
+              "label": "Monitor a Kafka Service"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Gen AI Services",
+          "items": [
+            {
+              "type": "doc",
+              "id": "db-and-services/ai-gateway/choreo-ai-gateway",
+              "label": "WSO2 Developer Platform AI Gateway"
+            },
+            {
+              "type": "doc",
+              "id": "db-and-services/ai-gateway/integrate-and-manage-gen-ai-services",
+              "label": "Integrate and Manage Generative AI Services"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "K8s Operations",
+      "items": [
+        {
+          "type": "category",
+          "label": "Runtime",
+          "items": [
+            {
+              "type": "doc",
+              "id": "k8s-operations/runtime/view-runtime-details",
+              "label": "View Kubernetes Runtime Details"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Containers",
+          "items": [
+            {
+              "type": "doc",
+              "id": "k8s-operations/containers/configure-container-resources-commands-and-arguments",
+              "label": "Configure Kubernetes Container Resources, Commands, and Arguments"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "k8s-operations/manage-configurations-and-secrets",
+          "label": "K8s Configurations and Secrets"
+        },
+        {
+          "type": "doc",
+          "id": "k8s-operations/set-up-health-checks",
+          "label": "Health Checks"
+        },
+        {
+          "type": "category",
+          "label": "Scaling",
+          "items": [
+            {
+              "type": "doc",
+              "id": "k8s-operations/scaling/autoscale-component-replicas",
+              "label": "Autoscale Component Replicas"
+            },
+            {
+              "type": "doc",
+              "id": "k8s-operations/scaling/autoscale-components-with-scale-to-zero",
+              "label": "Autoscale Components with Scale-to-Zero"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "k8s-operations/storage/configure-storage",
+          "label": "Storage"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Insights",
+      "items": [
+        {
+          "type": "doc",
+          "id": "insights/operational-insights-dashboard",
+          "label": "Operational Insights"
+        },
+        {
+          "type": "category",
+          "label": "Delivery Insights",
+          "items": [
+            {
+              "type": "doc",
+              "id": "insights/delivery-insights/configure-delivery-insights",
+              "label": "Configure Delivery Insights"
+            },
+            {
+              "type": "doc",
+              "id": "insights/delivery-insights/view-delivery-insights",
+              "label": "View Delivery Insights"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Integrate External Insights Platforms",
+          "items": [
+            {
+              "type": "category",
+              "label": "Work with the WSO2 Developer Platform Insights API",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "insights/work-with-choreo-insights-api/access-the-choreo-insights-api",
+                  "label": "Access the WSO2 Developer Platform Insights API"
+                },
+                {
+                  "type": "doc",
+                  "id": "insights/work-with-choreo-insights-api/choreo-insights-api",
+                  "label": "WSO2 Developer Platform Insights API"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "insights/cost-optimization",
+          "label": "Cost Insights"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Observability",
+      "items": [
+        {
+          "type": "category",
+          "label": "Alerts",
+          "items": [
+            {
+              "type": "doc",
+              "id": "observability/alerts/configure-alerts",
+              "label": "Configure Alerts"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "observability/runtime-logs",
+          "label": "Runtime Logs"
+        },
+        {
+          "type": "doc",
+          "id": "observability/private-data-plane-logs",
+          "label": "Private Data Plane Logs"
+        },
+        {
+          "type": "doc",
+          "id": "observability/audit-logs",
+          "label": "Audit Logs"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API Management",
+      "items": [
+        {
+          "type": "category",
+          "label": "Developer Portal",
+          "items": [
+            {
+              "type": "doc",
+              "id": "api-management/developer-portal/customize-the-developer-portal",
+              "label": "Customize the WSO2 Developer Platform Developer Portal"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/developer-portal/configure-identity-providers-for-developer-portal",
+              "label": "Configure Identity Providers for Developer Portal"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/developer-portal/configure-exposed-environments-to-developer-portal",
+              "label": "Configure Exposed Environments to Developer Portal"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "API Analytics",
+          "items": [
+            {
+              "type": "doc",
+              "id": "api-management/api-analytics/integrate-choreo-with-moesif",
+              "label": "Integrate WSO2 Developer Platform with Moesif for Analytics"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Consumer IDPs",
+          "items": [
+            {
+              "type": "doc",
+              "id": "api-management/consumer-idps/configure-a-user-store-with-built-in-idp",
+              "label": "Set Up a User Store with WSO2 Developer Platform’s Built-In Identity Provider"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/consumer-idps/configure-asgardeo-as-an-external-idp",
+              "label": "Set Up Asgardeo as an External IdP for WSO2 Developer Platform APIs"
+            },
+            {
+              "type": "doc",
+              "id": "api-management/consumer-idps/configure-azure-ad-as-an-external-idp",
+              "label": "Set Up Azure AD as an External IdP for WSO2 Developer Platform APIs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "WSO2 Developer Platform CLI",
+      "items": [
+        {
+          "type": "doc",
+          "id": "choreo-cli/choreo-cli-overview",
+          "label": "WSO2 Developer Platform CLI Overview"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-cli/get-started-with-the-choreo-cli",
+          "label": "Get Started with the WSO2 Developer Platform CLI"
+        },
+        {
+          "type": "doc",
+          "id": "choreo-cli/manage-authentication-with-personal-access-tokens",
+          "label": "Manage Authentication with Personal Access Tokens in WSO2 Developer Platform CLI"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "References",
+      "items": [
+        {
+          "type": "doc",
+          "id": "references/faq",
+          "label": "FAQ"
+        },
+        {
+          "type": "doc",
+          "id": "references/choreo-limitations",
+          "label": "WSO2 Developer Platform Limitations"
+        },
+        {
+          "type": "doc",
+          "id": "references/troubleshoot-choreo",
+          "label": "Troubleshoot WSO2 Developer Platform"
+        },
+        {
+          "type": "doc",
+          "id": "references/private-data-plane-security-levels",
+          "label": "Private Data Plane Security Levels"
+        },
+        {
+          "type": "doc",
+          "id": "references/private-data-plane-management-models",
+          "label": "Private Data Plane Management Models"
+        },
+        {
+          "type": "doc",
+          "id": "references/choreo-platform-services-billing-and-upgrades",
+          "label": "WSO2 Developer Platform Service Billing and Upgrades"
+        }
+      ]
+    }
+  ]
+}

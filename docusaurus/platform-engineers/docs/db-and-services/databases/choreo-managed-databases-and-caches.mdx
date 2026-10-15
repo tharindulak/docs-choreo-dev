@@ -1,0 +1,63 @@
+---
+title: WSO2 Developer Platform-Managed Databases, Vector Databases, and Caches
+deployment_options:
+  - WSO2 Cloud
+custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/pe-docs/docs/db-and-services/databases/choreo-managed-databases-and-caches.md
+---
+
+# WSO2 Developer Platform-Managed Databases, Vector Databases, and Caches
+
+WSO2 Developer Platform allows you to create PostgreSQL and MySQL databases as well as WSO2 Developer Platform-Managed Cache instances on all major cloud providers (AWS, Azure, GCP, and DigitalOcean) as fully WSO2 Developer Platform-managed platform services.
+These databases and caches can be seamlessly provisioned to offer persistence and caching capabilities for all your WSO2 Developer Platform components. WSO2 Developer Platform provides various service plans for each type, ranging from smaller instances for development purposes to production-grade databases with automatic backups and high-availability multi-nodes.
+
+## Technology Partnership
+
+WSO2 Developer Platform's managed data services are powered by **Aiven.io**, our trusted technology partner and data platform subprocessor. Aiven provides the underlying infrastructure, automated management, and expertise that enable WSO2 Developer Platform to deliver fully managed data services as part of our ecosystem.
+
+### Service Level Agreement (SLA)
+
+WSO2 Developer Platform-managed data services inherit Aiven's 99.99% monthly uptime SLA. See Aiven's SLA (https://aiven.io/sla) for details.
+
+### Security and Compliance
+
+For the current list of security practices and certifications, see Aiven Security, Privacy & Compliance (https://aiven.io/security-compliance).
+
+:::info[Note]
+
+ - The capability to create WSO2 Developer Platform-managed databases, vector databases, and cache services is available only for paid WSO2 Developer Platform users.
+ - Billing for these services will be included in your WSO2 Developer Platform subscription, with pricing varying based on the service plan of the resources you create. For more details, see [WSO2 Developer Platform Platform Services Billing](../../references/choreo-platform-services-billing-and-upgrades.mdx#platform-service-billing-information).
+
+:::
+
+!!!Tip "Explore the free trial"
+    WSO2 Developer Platform provides a 7-day free trial for all database types on the 'Hobbyist' service plan, available to free-tier users.
+
+## Support Model
+
+WSO2 Developer Platform provides support for managed data services directly and, when needed, in coordination with Aiven:
+
+- Guidance and operational assistance via WSO2 Developer Platform support
+- Coordination with Aiven experts for complex technical issues
+- WSO2 Developer Platform acts as your primary contact and manages escalations with the Aiven support team as required
+
+## PostgreSQL on WSO2 Developer Platform
+
+PostgreSQL (also known as Postgres), is an open-source object-relational database management system. You can create PostgreSQL databases on WSO2 Developer Platform as fully WSO2 Developer Platform-managed, flexible SQL databases that are ideal for both structured and unstructured data. If you want to perform an efficient vector similarity search, you can create a PostgreSQL vector database.
+
+- [Create a PostgreSQL database on WSO2 Developer Platform](./choreo-managed-postgresql-databases.mdx)
+
+## MySQL on WSO2 Developer Platform
+
+MySQL is a user-friendly, flexible, open-source relational database management system with a well-established history in the SQL database realm. WSO2 Developer Platform allows you to swiftly create fully WSO2 Developer Platform-managed MySQL databases, enabling rapid setup and utilization.
+
+- [Create a MySQL database on WSO2 Developer Platform](./choreo-managed-mysql-databases.mdx)
+
+## WSO2 Developer Platform-Managed Cache (Valkey - OSS Redis Compatible)
+
+A fully managed cache compatible powered by Valkey that's fully compatible with with Redis® OSS. A versatile, in‑memory NoSQL database that serves as a cache, database, streaming engine, and message broker. WSO2 Developer Platform-managed Cache allows you to have fully managed instances that can be swiftly provisioned and integrated into your applications within minutes.
+
+- [Create a WSO2 Developer Platform-managed Cache](./choreo-managed-caches.mdx)
+
+<span>
+ PostgreSQL, MySQL, and Redis® are trademarks and property of their respective owners. All product and service names used in this documentation are for identification purposes only. 
+</span>
