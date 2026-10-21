@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/wso2/docs-choreo-dev/edit/PE/en/developer-do
 
 # Work with the Micro Integrator Runtime in WSO2 Developer Platform
 
-[WSO2 Micro Integrator (WSO2 MI)](/integration/micro-integrator/) is a lightweight, high-performance integration runtime. It allows you to run integrations developed with WSO2 Synapse.
+[WSO2 Micro Integrator (WSO2 MI)](https://mi.docs.wso2.com/en/latest/) is a lightweight, high-performance integration runtime. It allows you to run integrations developed with WSO2 Synapse.
 
 The topics on this page walk you through the key aspects you need to understand to use the WSO2 MI runtime effectively in WSO2 Developer Platform.
 
@@ -15,16 +15,16 @@ The topics on this page walk you through the key aspects you need to understand 
 
 WSO2 Developer Platform supports creating the following component types using WSO2 MI integrations that cater to different use cases and requirements. Each integration type serves a specific purpose. Therefore, it is essential to understand their differences to easily choose the most appropriate integration for your use case.
 
-- **Service**: Exposes an integration as an API via HTTP, making it possible to create a RESTful interface for your integration service such as [data services](/integration/micro-integrator/develop/creating-artifacts/data-services/creating-data-services/). This type is ideal for scenarios where you need to provide an API for external systems or clients to interact with your integration.
+- **Service**: Exposes an integration as an API via HTTP, making it possible to create a RESTful interface for your integration service such as [data services](https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/data-services/creating-data-services/). This type is ideal for scenarios where you need to provide an API for external systems or clients to interact with your integration.
 - **Event Handler**: Triggers an integration based on external events such as messages arriving on a queue or updates in a database. This type is well-suited for implementing event-driven architectures or responding to changes in your system's environment.
 - **Scheduled Task**: Runs an integration automatically at predefined time intervals, ensuring that specific integration tasks occur at regular intervals. This type is ideal for batch processing, data synchronization, or periodic maintenance tasks.
 - **Manual Task**: Initiates an integration via user action, giving you full control over when the integration executes. This type is useful for on-demand tasks, testing, or debugging purposes.
 
 ## Develop integrations with the WSO2 Micro Integrator VS Code extension
 
-We recommend using the [WSO2 Micro Integrator VS Code Extension](/integration/micro-integrator/develop/mi-for-vscode/mi-for-vscode-overview/) for developing your integration projects. This powerful extension offers an AI-powered, low-code development experience right within your familiar VS Code environment, significantly reducing setup time, boosting productivity, and enhancing your overall development workflow.
+We recommend using the [WSO2 Micro Integrator VS Code Extension](https://mi.docs.wso2.com/en/latest/develop/mi-for-vscode/mi-for-vscode-overview/) for developing your integration projects. This powerful extension offers an AI-powered, low-code development experience right within your familiar VS Code environment, significantly reducing setup time, boosting productivity, and enhancing your overall development workflow.
 
-Install the extension and start developing: [Install WSO2 MI for VS Code](/integration/micro-integrator/develop/mi-for-vscode/install-wso2-mi-for-vscode/)
+Install the extension and start developing: [Install WSO2 MI for VS Code](https://mi.docs.wso2.com/en/latest/develop/mi-for-vscode/install-wso2-mi-for-vscode/)
 
 ### Key benefits of developing with the VS Code extension:
 - Familiar VS Code Ecosystem: Develop integrations in an environment you are already familiar with, reducing your learning curve.
@@ -96,7 +96,7 @@ Follow these steps to mount your certificate to the `/wso2mi/certs/` directory:
 
 ## Working with sensitive data using MI Secure Vault
 
-[MI Secure Vault](/integration/micro-integrator/install-and-setup/setup/security/encrypting-plain-text/) is a feature that allows users to securely access sensitive data, such as passwords and tokens in MI integrations. When you add secrets within WSO2 Developer Platform, they are made available to the Secure Vault for your integration to consume.
+[MI Secure Vault](https://mi.docs.wso2.com/en/latest/install-and-setup/setup/security/encrypting-plain-text/) is a feature that allows users to securely access sensitive data, such as passwords and tokens in MI integrations. When you add secrets within WSO2 Developer Platform, they are made available to the Secure Vault for your integration to consume.
 
 To add a secret to your MI component, follow these steps:
 
@@ -122,7 +122,7 @@ To add a secret to your MI component, follow these steps:
 ```
 This code retrieves the secret named `user_pass` from the MI Secure Vault and stores it in the property named `secret_value_1`. You can then use this property in your integration code to access the secret value.
 
-For more information on these features, see the [Accessing secrets](/integration/micro-integrator/install-and-setup/setup/security/encrypting-plain-text/#step-3-accessing-secrets) section of the MI Secure Vault documentation.
+For more information on these features, see the [Accessing secrets](https://mi.docs.wso2.com/en/latest/install-and-setup/setup/security/encrypting-plain-text/#step-3-accessing-secrets) section of the MI Secure Vault documentation.
 
 ## Environment variables
 
@@ -180,7 +180,7 @@ Therefore, the recommended approach is to update only the necessary configuratio
 :::
 
 Given below is a sample `deployment.toml` file that can be used to configure the JMS transport. For more information on WSO2 MI
-configuration parameters, see the [MI Configuration Catalog](/integration/micro-integrator/reference/config-catalog-mi/).
+configuration parameters, see the [MI Configuration Catalog](https://mi.docs.wso2.com/en/latest/reference/config-catalog-mi/).
 
 ```
 [[transport.jms.sender]]
@@ -240,8 +240,8 @@ You can design and implement integration flows using these connectors within the
 
 For more information, see the following topics in the WSO2 Micro Integrator documentation.
 
-- [Connectors Overview](/integration/micro-integrator/reference/connectors/connectors-overview/)
-- [Adding Connectors](/integration/micro-integrator/develop/creating-artifacts/adding-connectors/)
+- [Connectors Overview](https://mi.docs.wso2.com/en/latest/reference/connectors/connectors-overview/)
+- [Adding Connectors](https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/adding-connectors/)
 
 ## Deploying integrations in WSO2 Developer Platform 
 
