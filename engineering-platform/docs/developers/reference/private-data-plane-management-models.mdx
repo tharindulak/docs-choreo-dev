@@ -1,0 +1,74 @@
+---
+title: Private Data Plane Management Models
+description: WSO2 Developer Platform supports various management models for private data planes (PDPs), fostering collaboration between WSO2 and customers across diverse…  # generated from the first paragraph; a writer should improve it
+type: reference
+sidebar_label: Private data plane management models
+sidebar_position: 5
+---
+
+{edition.productName} supports various management models for private data planes (PDPs), fostering collaboration between WSO2 and customers across diverse scenarios. The following sections provide insights into WSO2's fully managed solutions and shared responsibility models, allowing you to make informed decisions regarding cloud-based operations and security.
+
+## WSO2 fully managed (infrastructure and PDP in WSO2 subscription) model
+
+WSO2 fully managed private data planes are supported only on Azure, AWS, and GCP cloud providers.
+
+| Task | Task description | Responsible party | Accountable | Consulted | Informed |
+| --- | --- | --- | --- | --- | --- |
+| Subscription prerequisites | - Create subscriptions<br /> - Check quota and service limits<br /> - Run the {edition.productName} compatibility prerequisite script | WSO2 | WSO2 | Customer (If required) | Customer (If required) |
+| Remote access for installation | Provide owner access | WSO2 | WSO2 | WSO2 | WSO2 |
+| Network management | - Obtain customers backend CIDR in case of VPN/peering<br /> - Check end-to-end connectivity (primary and failover) | WSO2/Customer | WSO2/Customer | Customer | Customer |
+| Firewall rules/access control | Set up firewall and required rules depending on the security tier | WSO2 | WSO2 | Customer | Customer |
+| Infrastructure provisioning | - Provision Bastion<br /> - Provision Kubernetes clusters | WSO2 | WSO2 | - | Customer(If required) |
+| Kubernetes cluster management | - Manage Kubernetes versions<br /> - Increase node pool size | WSO2 | WSO2 | Customer | Customer |
+| Infrastructure monitoring | Set up alerts | WSO2 | WSO2 | - | Customer(If required) |
+| DNS management for {edition.productName} system | - Manage DNS infrastructure<br /> - Manage SSL certificates for {edition.productName} system components | WSO2/Customer | WSO2/Customer | Customer | Customer |
+| {edition.productName} system components deployment | Set up PDP agents via Helm | WSO2 | WSO2 | - | - |
+| {edition.productName} system components management | Upgrade/patch/debug versions | WSO2 | WSO2 | - | Customer(If required) |
+| {edition.productName} system components monitoring | - Set up continuous monitoring 24x7<br /> - Provide monthly uptime reports | WSO2 | WSO2 | - | Customer |
+| {edition.productName} system security monitoring | If basic tier<br /> - CSPM<br /> - Apply security patches<br /> - Manage supply chain security (Image scanning, SAST)<br /> - Manage security incidents<br /> If standard tier/premium tier<br /> - CSPM<br /> - Apply security patches<br /> - Manage supply chain security<br /> - Monitor runtime security alerts (Azure Defender)<br /> - Monitor security incident and event management (SIEM) alerts<br /> - Manage security incidents<br /> - Adhere to compliance standards | WSO2/Customer | WSO2/Customer | WSO2/Customer | WSO2/Customer |
+| {edition.productName} application creation/deployment |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application management |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application monitoring |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application logs |  | Customer | Customer | Customer | Customer |
+
+## WSO2 fully managed (infrastructure and PDP in customer subscription) model
+
+| Task | Task description | Responsible party | Accountable | Consulted | Informed |
+| --- | --- | --- | --- | --- | --- |
+| Subscription prerequisites | - Create subscriptions<br /> - Check quota and service limits<br /> - Run the {edition.productName} compatibility prerequisite script | Customer | Customer | WSO2 | - |
+| Remote access for installation | Provide access | Customer | Customer | WSO2 | WSO2 |
+| Network management | - Obtain customers backend CIDR in case of VPN/peering<br /> - Check end-to-end connectivity (primary and failover) | WSO2/Customer | WSO2/Customer | Customer | Customer |
+| Firewall rules/access control | Set up firewall and required rules depending on the security tier | WSO2/Customer | WSO2/Customer | Customer | Customer |
+| Infrastructure provisioning | - Provision Bastion<br /> - Provision Kubernetes clusters | WSO2 | WSO2 | Customer | Customer |
+| Kubernetes cluster management | - Manage Kubernetes versions<br /> - Increase node pool size | WSO2 | WSO2 | Customer | Customer |
+| Infrastructure monitoring | Set up alerts | WSO2 | WSO2 | - | Customer(If required) |
+| DNS management for {edition.productName} system | - Manage DNS infrastructure<br /> - Manage SSL certificates for {edition.productName} system components | WSO2/Customer | WSO2/Customer | Customer | Customer |
+| {edition.productName} system components deployment | Set up PDP agents via Helm | WSO2 | WSO2 | Customer | - |
+| {edition.productName} system components management | Upgrade/patch/debug versions | WSO2 | WSO2 | - | Customer(If required) |
+| {edition.productName} system components monitoring | - Set up continuous monitoring 24x7<br /> - Provide monthly uptime reports | WSO2 | WSO2 | - | Customer |
+| {edition.productName} system security monitoring | If basic tier<br /> - CSPM<br /> - Apply security patches<br /> - Manage supply chain security (Image scanning, SAST)<br /> - Manage security incidents<br /> If standard tier/premium tier<br /> - CSPM<br /> - Apply security patches<br /> - Manage supply chain security<br /> - Monitor runtime security alerts (Azure Defender)<br /> - Monitor security incident and event management (SIEM) alerts<br /> - Manage security incidents<br /> - Adhere to compliance standards | WSO2/Customer | WSO2/Customer | WSO2/Customer | WSO2/Customer |
+| {edition.productName} application creation/deployment |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application management |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application monitoring |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application logs |  | Customer | Customer | Customer | Customer |
+
+## Customer self-managed (WSO2 provides installation script and updates) model
+
+| Task | Task description | Responsible party | Accountable | Consulted | Informed |
+| --- | --- | --- | --- | --- | --- |
+| Subscription prerequisites | - Create subscriptions<br /> - Check quota and service limits<br /> - Run the {edition.productName} compatibility prerequisite script | Customer | Customer | WSO2 | WSO2 |
+| Remote access for installation | Provide owner access | Customer | Customer | WSO2 | - |
+| Network management | - Obtain customers backend CIDR in case of VPN/peering<br /> - Check end-to-end connectivity (primary and failover) | Customer | Customer | WSO2 | WSO2 |
+| Firewall rules/access control | Set up firewall and required rules depending on the security tier | Customer | Customer | WSO2 | WSO2 |
+| Infrastructure provisioning | - Provision Bastion<br /> - Provision Kubernetes clusters | Customer | Customer | WSO2 | WSO2(If required) |
+| Kubernetes cluster management | - Manage Kubernetes versions<br /> - Increase node pool size | Customer | Customer | WSO2 | WSO2(If required) |
+| Infrastructure monitoring | Set up alerts | Customer | Customer | WSO2 | - |
+| DNS management for {edition.productName} system | - Manage DNS infrastructure<br /> - Manage SSL certificates for {edition.productName} system components | Customer | Customer | WSO2 | - |
+| {edition.productName} system components deployment | Set up PDP agents via Helm | Customer | Customer | WSO2 | - |
+| {edition.productName} system components management | Upgrade/patch/debug versions | Customer | Customer | WSO2 | - |
+| {edition.productName} system components monitoring | - Set up continuous monitoring 24x7<br /> - Provide monthly uptime reports | Customer | Customer | WSO2 | - |
+| {edition.productName} system security monitoring | If basic tier<br /> - CSPM<br /> - Apply security patches<br /> - Manage supply chain security (Image scanning, SAST)<br /> - Manage security incidents<br /> If standard tier/premium tier<br /> - CSPM<br /> - Apply security patches<br /> - Manage supply chain security<br /> - Monitor runtime security alerts (Azure Defender)<br /> - Monitor security incident and event management (SIEM) alerts<br /> - Manage security incidents<br /> - Adhere to compliance standards | WSO2/Customer | WSO2/Customer | WSO2/Customer | WSO2/Customer |
+| {edition.productName} application creation/deployment |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application management |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application monitoring |  | Customer | Customer | Customer | Customer |
+| {edition.productName} application logs |  | Customer | Customer | Customer | Customer |

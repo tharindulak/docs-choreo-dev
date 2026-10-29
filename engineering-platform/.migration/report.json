@@ -1,0 +1,1012 @@
+{
+  "summary": {
+    "source": "wso2/docs-choreo-dev@b1b5f75dbbe25a72a7c73d7af40dce3ee9579448",
+    "edition": "cloud",
+    "legacyBase": "https://wso2.com/engineering-platform/developer-platform/docs/",
+    "navPages": 251,
+    "sourceFiles": 268,
+    "stats": {
+      "pages": 265,
+      "partials": 0,
+      "apiPages": 0,
+      "placeholders": 11,
+      "images": 229,
+      "attachments": 0,
+      "missingImages": 0,
+      "links": 1869,
+      "externalLinks": 697,
+      "legacyHostLinks": 51,
+      "otherVersionLinks": 0,
+      "crossProductLinks": 31,
+      "linksViaRedirect": 5,
+      "droppedLinks": 14,
+      "droppedAnchors": 40,
+      "placeholdersWrapped": 11,
+      "admonitions": 702,
+      "details": 4,
+      "tabSets": 30,
+      "codeBlocks": 357,
+      "indentedCode": 5,
+      "htmlBlocks": 191,
+      "explicitIds": 125,
+      "basePathInCode": 0,
+      "basePathInText": 0,
+      "unknownElements": 10,
+      "unknownLanguages": [],
+      "generatedDescriptions": 265,
+      "sidebarLabels": 220,
+      "relativeFallback": 308,
+      "unlisted": 14,
+      "placeholders_": 0,
+      "sharedPages": 0,
+      "cloudOnlyPages": 0,
+      "selfHostedOnlyPages": 0,
+      "markedPages": 0,
+      "markers": 0,
+      "flatMerged": 0,
+      "editionCheckFailures": 0,
+      "imageVariants": 0,
+      "linkVariants": 0,
+      "includesExpanded": 9,
+      "includeFrontMatter": 0,
+      "flaggedOffPages": 0,
+      "specsFixed": 0,
+      "titlesVarying": 0,
+      "variants": 0,
+      "adjacentAlternatives": 0,
+      "cloudCounterparts": 0,
+      "ambiguousCounterparts": 0,
+      "overviewPages": 3,
+      "attributeVariables": 4,
+      "exportSingleFolders": 0,
+      "legacyRedirectsExternal": 7,
+      "legacyRedirectsUnresolved": 35,
+      "legacyRedirects": 404,
+      "legacyRedirectsSource": 138,
+      "acceptedByOverrides": 0
+    },
+    "issues": {
+      "html": 12,
+      "not-in-nav": 14,
+      "broken-link": 14,
+      "indented-code": 4,
+      "broken-anchor": 40,
+      "redirect": 35
+    },
+    "compileFailures": 0,
+    "overrides": {
+      "file": "engineering-platform.overrides.yaml",
+      "patches": 4,
+      "patchesApplied": 4,
+      "accepted": 0
+    }
+  },
+  "items": [
+    {
+      "kind": "html",
+      "file": "developers/administer/configure-a-custom-domain-for-your-organization.md",
+      "message": "<details> block never closes; converted up to the next blank line"
+    },
+    {
+      "kind": "html",
+      "file": "developers/administer/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <leaf> inside raw HTML kept as the text `<leaf>`"
+    },
+    {
+      "kind": "html",
+      "file": "developers/administer/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <intermediate> inside raw HTML kept as the text `<intermediate>`"
+    },
+    {
+      "kind": "html",
+      "file": "developers/administer/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <root> inside raw HTML kept as the text `<root>`"
+    },
+    {
+      "kind": "html",
+      "file": "developers/administer/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <root_or_bundle_cert> inside raw HTML kept as the text `<root_or_bundle_cert>`"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/api-management/api-governance/default-rulesets/owasp_top_10_doc.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/api-management/api-governance/default-rulesets/wso2_api_design_guidelines_doc.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/api-management/api-governance/default-rulesets/wso2_style_guidelines_doc.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/authentication-and-authorization/secure-web-applications-with-managed-authentication.md",
+      "message": "link to ../test-secure-api-access-with-\u0002productName\u0002-built-in-security-token-service/#step-2-create-roles-and-assign-permissions has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../test-secure-api-access-with-\u0002productName\u0002-built-in-security-token-service/#step-2-create-roles-and-assign-permissions"
+      }
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/authentication-and-authorization/secure-web-applications-with-managed-authentication.md",
+      "message": "link to ../test-secure-api-access-with-\u0002productName\u0002-built-in-security-token-service/#step-3-assign-roles-to-user-groups has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../test-secure-api-access-with-\u0002productName\u0002-built-in-security-token-service/#step-3-assign-roles-to-user-groups"
+      }
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/authentication-and-authorization/secure-web-applications-with-managed-authentication.md",
+      "message": "link to ../test-secure-api-access-with-\u0002productName\u0002-built-in-security-token-service has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../test-secure-api-access-with-\u0002productName\u0002-built-in-security-token-service"
+      }
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/consuming-services/consuming-a-service-apikey.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/consuming-services/create-a-subscription.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/consuming-services/create-an-application.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/consuming-services/discovering-an-api-devportal.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/consuming-services/manage-api-keys.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/develop-components/configure-endpoints-body.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/develop-components/connect-to-remote-dependencies-while-developing.md",
+      "message": "link to ../../\u0002productName\u0002-concepts/connections/ has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../../\u0002productName\u0002-concepts/connections/"
+      }
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/develop-components/connect-to-remote-dependencies-while-developing.md",
+      "message": "link to ../../\u0002productName\u0002-cli/get-started-with-the-\u0002productName\u0002-cli/ has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../../\u0002productName\u0002-cli/get-started-with-the-\u0002productName\u0002-cli/"
+      }
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/develop-components/connect-to-remote-dependencies-while-developing.md",
+      "message": "link to ../../\u0002productName\u0002-cli/manage-authentication-with-personal-access-tokens/ has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../../\u0002productName\u0002-cli/manage-authentication-with-personal-access-tokens/"
+      }
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/develop-components/develop-an-api-proxy.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/monitoring-and-insights/insights-overview.md",
+      "message": "link to /\u0002productName\u0002/docs/administer/control-access-in-the-\u0002productName\u0002-console/ has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "/\u0002productName\u0002/docs/administer/control-access-in-the-\u0002productName\u0002-console/"
+      }
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/monitoring-and-insights/logs/view-pdp-logs.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "developers/monitoring-and-insights/work-with-choreo-insights-api/choreo-insights-api.md",
+      "message": "link to graphiql-explorer/index.html has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "graphiql-explorer/index.html"
+      }
+    },
+    {
+      "kind": "html",
+      "file": "developers/references/faq.md",
+      "message": "unbalanced inline </table> removed"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "developers/resources/kubernetes-upgrade-notice.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "platform-engineers/api-management/developer-portal/configure-self-sign-up.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "platform-engineers/db-and-services/databases/choreo-managed-caches.md",
+      "message": "link to ../add-\u0002productName\u0002-managed-databases-and-caches-to-the-marketplace has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../add-\u0002productName\u0002-managed-databases-and-caches-to-the-marketplace"
+      }
+    },
+    {
+      "kind": "broken-link",
+      "file": "platform-engineers/db-and-services/databases/choreo-managed-mysql-databases.md",
+      "message": "link to ../add-\u0002productName\u0002-managed-databases-and-caches-to-the-marketplace has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../add-\u0002productName\u0002-managed-databases-and-caches-to-the-marketplace"
+      }
+    },
+    {
+      "kind": "broken-link",
+      "file": "platform-engineers/db-and-services/databases/choreo-managed-postgresql-databases.md",
+      "message": "link to ../add-\u0002productName\u0002-managed-databases-and-caches-to-the-marketplace has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../add-\u0002productName\u0002-managed-databases-and-caches-to-the-marketplace"
+      }
+    },
+    {
+      "kind": "not-in-nav",
+      "file": "platform-engineers/db-and-services/external-services/integrate-and-manage-gen-ai-services.md",
+      "message": "not in the legacy nav; published unlisted (no sidebar entry, as before)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "platform-engineers/devops/cd-pipelines/deploying-application-using-choreo-cd-pipeline.md",
+      "message": "link to ./submit-and-manage-workflow-approval-requests.md has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "./submit-and-manage-workflow-approval-requests.md",
+        "suggest": {
+          "main": {
+            "page": "developers/guides/develop-components/submit-and-manage-workflow-approval-requests",
+            "oldUrl": "develop-components/submit-and-manage-workflow-approval-requests/"
+          }
+        }
+      }
+    },
+    {
+      "kind": "indented-code",
+      "file": "platform-engineers/infrastructure/credentials/use-your-own-container-registry.md",
+      "message": "indented block \"Recommended authentication options:\" became a code block (Python-Markdown read it as code too)"
+    },
+    {
+      "kind": "indented-code",
+      "file": "platform-engineers/infrastructure/credentials/use-your-own-container-registry.md",
+      "message": "indented block \"ECR does not allow the creation of static access p\" became a code block (Python-Markdown read it as code too)"
+    },
+    {
+      "kind": "indented-code",
+      "file": "platform-engineers/infrastructure/credentials/use-your-own-container-registry.md",
+      "message": "indented block \"Recommended authentication option:\" became a code block (Python-Markdown read it as code too)"
+    },
+    {
+      "kind": "html",
+      "file": "platform-engineers/infrastructure/domains/configure-a-custom-domain-for-your-organization.md",
+      "message": "<details> block never closes; converted up to the next blank line"
+    },
+    {
+      "kind": "html",
+      "file": "platform-engineers/infrastructure/domains/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <leaf> inside raw HTML kept as the text `<leaf>`"
+    },
+    {
+      "kind": "html",
+      "file": "platform-engineers/infrastructure/domains/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <intermediate> inside raw HTML kept as the text `<intermediate>`"
+    },
+    {
+      "kind": "html",
+      "file": "platform-engineers/infrastructure/domains/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <root> inside raw HTML kept as the text `<root>`"
+    },
+    {
+      "kind": "html",
+      "file": "platform-engineers/infrastructure/domains/configure-a-custom-domain-for-your-organization.md",
+      "message": "unknown element <root_or_bundle_cert> inside raw HTML kept as the text `<root_or_bundle_cert>`"
+    },
+    {
+      "kind": "broken-link",
+      "file": "platform-engineers/infrastructure/domains/configure-a-custom-domain-for-your-organization.md",
+      "message": "link to ../governance/workflows.configure-approvals-for-choreo-workflows.md has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "../governance/workflows.configure-approvals-for-choreo-workflows.md"
+      }
+    },
+    {
+      "kind": "indented-code",
+      "file": "platform-engineers/insights/cost-optimization.md",
+      "message": "indented block \"Auto Apply Recommendations:\" became a code block (Python-Markdown read it as code too)"
+    },
+    {
+      "kind": "broken-link",
+      "file": "platform-engineers/insights/work-with-choreo-insights-api/choreo-insights-api.md",
+      "message": "link to graphiql-explorer/index.html has no target in this version; link removed, text kept",
+      "detail": {
+        "href": "graphiql-explorer/index.html"
+      }
+    },
+    {
+      "kind": "html",
+      "file": "platform-engineers/references/faq.md",
+      "message": "unbalanced inline </table> removed"
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/administer/configure-enterprise-login.md",
+      "message": "anchor #configure-enterprise-login-for-your-\u0002productName\u0002-organization does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#configure-enterprise-login-for-your-\u0002productName\u0002-organization",
+        "anchor": "configure-enterprise-login-for-your-\u0002productName\u0002-organization",
+        "target": "docs/developers/guides/administer/configure-enterprise-login.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/authentication-and-authorization/secure-api-access-with-asgardeo.md",
+      "message": "anchor #step-1-assign-scopes-to-an-api-in-\u0002productName\u0002 does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#step-1-assign-scopes-to-an-api-in-\u0002productName\u0002",
+        "anchor": "step-1-assign-scopes-to-an-api-in-\u0002productName\u0002",
+        "target": "docs/developers/guides/authentication-and-authorization/secure-api-access-with-asgardeo.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/authentication-and-authorization/test-secure-api-access-with-choreo-built-in-security-token-service.md",
+      "message": "anchor #step-1-assign-permissions-to-an-api-in-\u0002productName\u0002 does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#step-1-assign-permissions-to-an-api-in-\u0002productName\u0002",
+        "anchor": "step-1-assign-permissions-to-an-api-in-\u0002productName\u0002",
+        "target": "docs/developers/guides/authentication-and-authorization/test-secure-api-access-with-choreo-built-in-security-token-service.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/choreo-concepts/choreo-marketplace.md",
+      "message": "anchor #migration-guide does not exist on developers/guides/develop-components/manage-component-source-configurations.mdx; anchor removed",
+      "detail": {
+        "href": "../develop-components/manage-component-source-configurations.md#migration-guide",
+        "anchor": "migration-guide",
+        "target": "docs/developers/guides/develop-components/manage-component-source-configurations.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/consuming-services/generate-an-access-token.md",
+      "message": "anchor #manage-subscriptions does not exist on developers/guides/consuming-services/create-a-subscription.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/consuming-services/create-a-subscription/#manage-subscriptions",
+        "anchor": "manage-subscriptions",
+        "target": "docs/developers/guides/consuming-services/create-a-subscription.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/deploy-a-containerized-application.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-a-webhook.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-components-using-vs-code.md",
+      "message": "anchor #using-vs-code does not exist on developers/guides/develop-components/connect-to-remote-dependencies-while-developing.mdx; anchor removed",
+      "detail": {
+        "href": "../../develop-components/connect-to-remote-dependencies-while-developing/#using-vs-code",
+        "anchor": "using-vs-code",
+        "target": "docs/developers/guides/develop-components/connect-to-remote-dependencies-while-developing.mdx",
+        "context": "main",
+        "suggest": {
+          "anchor": "debug-using-vs-code",
+          "score": 0.67
+        }
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-integrations/develop-a-manual-task.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-integrations/develop-a-scheduled-task.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-integrations/develop-an-event-handler.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/develop-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-ballerina-graphql-endpoint-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-grpc-endpoint-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-grpc-endpoint-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-prism-based-mock-server-using-an-openapi-specification.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-tcp-server-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-tcp-server-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-udp-server-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-udp-server-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-services/expose-a-websocket-endpoint-via-a-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-web-applications/build-and-deploy-a-single-page-web-application.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/develop-web-applications/build-and-deploy-a-single-page-web-application.md",
+      "message": "anchor #apply-a-file-mount-to-your-container does not exist on developers/guides/devops-and-ci-cd/manage-configurations-and-secrets.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/devops-and-ci-cd/manage-configurations-and-secrets/#apply-a-file-mount-to-your-container",
+        "anchor": "apply-a-file-mount-to-your-container",
+        "target": "docs/developers/guides/devops-and-ci-cd/manage-configurations-and-secrets.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/manage-component-source-configurations.md",
+      "message": "anchor #overview-of-the-endpointsyaml-file does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#overview-of-the-endpointsyaml-file",
+        "anchor": "overview-of-the-endpointsyaml-file",
+        "target": "docs/developers/guides/develop-components/manage-component-source-configurations.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/develop-components/work-with-the-micro-integrator-runtime-in-choreo.md",
+      "message": "anchor #migration-guide does not exist on developers/guides/develop-components/manage-component-source-configurations.mdx; anchor removed",
+      "detail": {
+        "href": "../develop-components/manage-component-source-configurations.md#migration-guide",
+        "anchor": "migration-guide",
+        "target": "docs/developers/guides/develop-components/manage-component-source-configurations.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/devops-and-ci-cd/configure-vpns-on-the-choreo-cloud-data-plane.md",
+      "message": "anchor #learn-the-endpointsyaml-file does not exist on developers/guides/develop-components/configure-endpoints.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/develop-components/configure-endpoints/#learn-the-endpointsyaml-file",
+        "anchor": "learn-the-endpointsyaml-file",
+        "target": "docs/developers/guides/develop-components/configure-endpoints.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/integrate-and-manage-external-services/integrate-and-manage-third-party-services.md",
+      "message": "anchor #create-a-connection-to-an-external-service does not exist on developers/guides/develop-components/sharing-and-reusing/create-a-connection.mdx; anchor removed",
+      "detail": {
+        "href": "../develop-components/sharing-and-reusing/create-a-connection.md#create-a-connection-to-an-external-service",
+        "anchor": "create-a-connection-to-an-external-service",
+        "target": "docs/developers/guides/develop-components/sharing-and-reusing/create-a-connection.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/manage-databases-and-caches/choreo-managed-postgresql-databases.md",
+      "message": "anchor #create-a-\u0002productName\u0002-managed-postgresql-database does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#create-a-\u0002productName\u0002-managed-postgresql-database",
+        "anchor": "create-a-\u0002productName\u0002-managed-postgresql-database",
+        "target": "docs/developers/guides/manage-databases-and-caches/choreo-managed-postgresql-databases.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/quick-start-guides/deploy-a-web-application-that-consumes-a-backend-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/quick-start-guides/deploy-a-web-application-that-consumes-a-backend-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/quick-start-guides/deploy-your-first-service.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/quick-start-guides/deploy-your-first-static-web-application.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/resources/kubernetes-upgrade-notice.md",
+      "message": "anchor #redeploy-a-component-in-\u0002productName\u0002 does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#redeploy-a-component-in-\u0002productName\u0002",
+        "anchor": "redeploy-a-component-in-\u0002productName\u0002",
+        "target": "docs/developers/reference/kubernetes-upgrade-notice.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/resources/kubernetes-upgrade-notice.md",
+      "message": "anchor #redeploy-a-component-in-\u0002productName\u0002 does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#redeploy-a-component-in-\u0002productName\u0002",
+        "anchor": "redeploy-a-component-in-\u0002productName\u0002",
+        "target": "docs/developers/reference/kubernetes-upgrade-notice.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/resources/kubernetes-upgrade-notice.md",
+      "message": "anchor #redeploy-a-component-in-\u0002productName\u0002 does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#redeploy-a-component-in-\u0002productName\u0002",
+        "anchor": "redeploy-a-component-in-\u0002productName\u0002",
+        "target": "docs/developers/reference/kubernetes-upgrade-notice.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/testing/test-apis-with-choreo-apichat.md",
+      "message": "anchor #learn-the-endpointsyaml-file does not exist on developers/guides/develop-components/configure-endpoints.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/develop-components/configure-endpoints/#learn-the-endpointsyaml-file",
+        "anchor": "learn-the-endpointsyaml-file",
+        "target": "docs/developers/guides/develop-components/configure-endpoints.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "developers/testing/test-components-with-test-runner.md",
+      "message": "anchor #deploy does not exist on developers/concepts/ci-cd.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/choreo-concepts/ci-cd/#deploy",
+        "anchor": "deploy",
+        "target": "docs/developers/concepts/ci-cd.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "platform-engineers/db-and-services/databases/choreo-managed-postgresql-databases.md",
+      "message": "anchor #create-a-\u0002productName\u0002-managed-postgresql-database does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#create-a-\u0002productName\u0002-managed-postgresql-database",
+        "anchor": "create-a-\u0002productName\u0002-managed-postgresql-database",
+        "target": "docs/platform-engineers/guides/db-and-services/databases/choreo-managed-postgresql-databases.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "platform-engineers/infrastructure/configure-vpns-on-the-choreo-cloud-data-plane.md",
+      "message": "anchor #learn-the-endpointsyaml-file does not exist on developers/guides/develop-components/configure-endpoints.mdx; anchor removed",
+      "detail": {
+        "href": "https://wso2.com/choreo/docs/develop-components/configure-endpoints/#learn-the-endpointsyaml-file",
+        "anchor": "learn-the-endpointsyaml-file",
+        "target": "docs/developers/guides/develop-components/configure-endpoints.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "broken-anchor",
+      "file": "platform-engineers/user-management/users/configure-enterprise-login.md",
+      "message": "anchor #configure-enterprise-login-for-your-\u0002productName\u0002-organization does not exist on this page; anchor removed",
+      "detail": {
+        "href": "#configure-enterprise-login-for-your-\u0002productName\u0002-organization",
+        "anchor": "configure-enterprise-login-for-your-\u0002productName\u0002-organization",
+        "target": "docs/platform-engineers/guides/user-management/users/configure-enterprise-login.mdx",
+        "context": "main",
+        "suggest": null
+      }
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/tutorials/connect-your-own-github-repository-to-choreo.md → https://wso2.com/choreo/docs/manage-repository/connect-your-own-github-repository-to-choreo/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/tutorials/construct-statements.md → https://wso2.com/choreo/docs/develop/explore-code-editor/construct-statements/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/tutorials/connect-your-existing-ballerina-project-to-choreo.md → https://wso2.com/choreo/docs/manage-repository/connect-your-existing-ballerina-project-to-choreo/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/tutorials/configure-automatic-deployment.md → https://wso2.com/choreo/docs/deploy/configure-automatic-deployment/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/tutorials/map-data.md → https://wso2.com/choreo/docs/develop/explore-code-editor/map-data/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/api-proxies.md → https://wso2.com/choreo/docs/develop/components/api-proxy/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/api-proxies/api-proxy.md → https://wso2.com/choreo/docs/develop/components/api-proxy/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/scheduled-tasks.md → https://wso2.com/choreo/docs/develop/components/scheduled-trigger/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/manual-triggers.md → https://wso2.com/choreo/docs/develop/components/manual-trigger/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/developer-portal/developer-portal.md → https://wso2.com/choreo/docs/consume/developer-portal/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/insights/configure-alerts.md → https://wso2.com/choreo/docs/observe-and-analyze/analyze/configure-alerts/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/administration/connect-to-an-external-identity-provider.md → https://wso2.com/choreo/docs/administer/connect-to-an-external-identity-provider/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/observability/root-cause-analysis.md → https://wso2.com/choreo/docs/observe-and-analyze/observe/root-cause-analysis/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/references/performance-analysis.md → https://wso2.com/choreo/docs/develop/run-and-test/forecast-performance-metrics/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/references/alerting.md → https://wso2.com/choreo/docs/alerts/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/references/manage-connectors.md → https://wso2.com/choreo/docs/develop/advanced-topics/manage-connectors/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/references/handle-non-ballerina-files-in-choreo.md → https://wso2.com/choreo/docs/develop/explore-code-editor/handle-non-ballerina-files-in-choreo/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/references/define-configurable-variables.md → https://wso2.com/choreo/docs/develop/explore-code-editor/define-configurable-variables/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/references/connect-with-protected-third-party-applications.md → https://wso2.com/choreo/docs/references/connect-with-protected-third-party-applications/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/get-started/tutorials/create-your-first-integration-as-an-api.md → https://wso2.com/choreo/docs/quick-start-guides/build-your-first-integration-with-choreo-ipaas/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/get-started/tutorials/create-your-first-event-triggered-integration.md → https://wso2.com/choreo/docs/develop-components/develop-integrations/develop-an-event-triggered-integration/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/develop/components/api-proxy.md → https://wso2.com/choreo/docs/develop-components/develop-a-rest-api-proxy/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/develop/components/scheduled-trigger.md → https://wso2.com/choreo/docs/develop-components/develop-integrations/develop-a-scheduled-integration/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/observe-and-analyze/analyze/configure-alerts.md → https://wso2.com/choreo/docs/monitoring-and-insights/alerts/configure-alerts/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/observe-and-analyze/analyze/dora-metrics/configure-cio-dashboard.md → https://wso2.com/choreo/docs/monitoring-and-insights/engineering-insights/configure-cio-dashboard/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/observe-and-analyze/analyze/dora-metrics/view-dora-metrics.md → https://wso2.com/choreo/docs/monitoring-and-insights/engineering-insights/view-dora-metrics/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/alerts.md → https://wso2.com/choreo/docs/monitoring-and-insights/alerts/configure-alerts/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/ipaas/get-started-with-choreo-ipaas.md → https://wso2.com/choreo/docs/quick-start-guides/build-your-first-integration-with-choreo-ipaas/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/ipaas/ballerina/develop-integrations-with-ballerina.md → https://wso2.com/choreo/docs/quick-start-guides/build-your-first-integration-with-choreo-ipaas/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/ipaas/micro-integrator/develop-integrations-with-integration-studio.md → https://wso2.com/choreo/docs/develop-integrations/develop-an-integration-with-integration-studio/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/ipaas/micro-integrator/create-your-first-integration.md → https://wso2.com/choreo/docs/quick-start-guides/build-your-first-integration-with-choreo-ipaas/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/quick-start-guides/build-your-first-integration-with-choreo-ipaas.md → https://wso2.com/choreo/docs/tutorials/build-your-first-integration/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/monitoring-and-insights/engineering-insights/configure-cio-dashboard.md → https://wso2.com/choreo/docs/monitoring-and-insights/delivery-insights/configure-dora-metrics/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/monitoring-and-insights/engineering-insights/view-dora-metrics.md → https://wso2.com/choreo/docs/monitoring-and-insights/delivery-insights/view-dora-metrics/ has no target page in cloud; sent to the Edition home"
+    },
+    {
+      "kind": "redirect",
+      "file": null,
+      "message": "legacy redirect developers/develop-components/develop-a-rest-api-proxy.md → https://wso2.com/choreo/docs/develop-components/develop-proxy/ has no target page in cloud; sent to the Edition home"
+    }
+  ]
+}

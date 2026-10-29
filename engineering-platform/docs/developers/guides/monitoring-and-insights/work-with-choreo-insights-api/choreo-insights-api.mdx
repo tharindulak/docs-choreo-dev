@@ -1,0 +1,3115 @@
+---
+title: WSO2 Developer Platform Insights API
+description: The WSO2 Developer Platform Insights API is a GraphQL API that allows you to retrieve data from external systems based on specific criteria.  # generated from the first paragraph; a writer should improve it
+type: how-to
+sidebar_label: WSO2 Developer Platform insights API
+sidebar_position: 2
+---
+
+# {edition.productName} Insights API
+
+The {edition.productName} Insights API is a GraphQL API that allows you to retrieve data from external systems based on specific criteria. This guide describes the operations and schema-defined types you can use to retrieve data via the {edition.productName} Insights API.
+
+ - **Allowed operations:** [Queries](#query)
+ - **Schema-defined types:** [Objects](#objects), [Inputs](#inputs), [Enums](#enums), and [Scalars](#scalars)
+
+##Try out
+
+You can try out the {edition.productName} Insights API with your data via GraphQL Explorer.
+
+:::warning
+The GraphQL Explorer is currently not compatible with the Safari web browser due to a [known issue](https://developer.apple.com/forums/thread/658688).
+:::
+
+## Query
+The query root of the {edition.productName} Insights GraphQL API.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**listAllAPI**</td>
+      <td vAlign="top">\[[API](#api)\]</td>
+      <td>Fetches all the APIs with the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `provider` parameter to further filter the APIs by a specific provider.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">provider</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The name of the API provider.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**listApplications**</td>
+      <td vAlign="top">\[[Application](#application)\]</td>
+      <td>Fetches all the applications with the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `applicationFilter` parameter to further filter the applications by a specific application filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">applicationFilter</td>
+      <td vAlign="top">[ApplicationFilter](#applicationfilter)</td>
+      <td>The application filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**listProviders**</td>
+      <td vAlign="top">\[[Provider](#provider)\]</td>
+      <td>Fetches all the API providers with the given combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**listSubscribers**</td>
+      <td vAlign="top">\[[Subscriber](#subscriber)\]</td>
+      <td>Fetches all the API subscribers with the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `subscriberFilter` parameter to further filter the subscribers.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">subscriberFilter</td>
+      <td vAlign="top">[SubscriberFilter](#subscriberfilter)</td>
+      <td>The subscriber filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**listOrganizations**</td>
+      <td vAlign="top">\[[Organization](#organization)\]</td>
+      <td>Fetches all the organizations of a user.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**listEnvironments**</td>
+      <td vAlign="top">\[[Environment](#environment)\]</td>
+      <td>Fetches all the environments of an organization.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">org</td>
+      <td vAlign="top">[OrgFilter](#orgfilter)!</td>
+      <td>The organization filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">projectId</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The project ID by which the results need to be filtered. It is optional to specify a value for this parameter. Note that providing a project ID with an on-prem key is not allowed.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**listTenants**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>Fetches all the tenants with the given combination of environment ID and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">tenantDataFilter</td>
+      <td vAlign="top">[TenantDataFilter](#tenantdatafilter)!</td>
+      <td>The tenant filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTotalTraffic**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>Returns the total traffic during the given time range for the specified combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTotalErrors**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>Returns the total number of errors that occurred during the given time range for the specified combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getOverallLatency**</td>
+      <td vAlign="top">[Float](#float)</td>
+      <td>Returns the overall response latency (95th percentile value) during the given time range for the specified combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getLatencySummary**</td>
+      <td vAlign="top">[LatencySummary](#latencysummary)</td>
+      <td>Returns the response latency value (95th percentile value) for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `latencySummaryFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">latencySummaryFilter</td>
+      <td vAlign="top">[LatencySummaryFilter](#latencysummaryfilter)</td>
+      <td>The latency summary filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getSuccessSummary**</td>
+      <td vAlign="top">[SuccessSummary](#successsummary)</td>
+      <td>Returns the number of successful (2xx response code) hit count for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `granularity` parameter to override the default granularity value.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">granularity</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getErrorSummary**</td>
+      <td vAlign="top">[ErrorSummary](#errorsummary)</td>
+      <td>Returns the number of unsuccessful hits (i.e., the total of both `4xx` and `5xx` response codes) for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `granularity` parameter to override the default granularity value.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">granularity</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getErrorsByCategory**</td>
+      <td vAlign="top">[ErrorsByCategory](#errorsbycategory)</td>
+      <td>Returns the number of proxy errors (i.e., the total of both `4xx` and `5xx` response codes) by each error category for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `errorsByCategoryFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">errorsByCategoryFilter</td>
+      <td vAlign="top">[ErrorsByCategoryFilter](#errorsbycategoryfilter)</td>
+      <td>The errors by category filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getErrorsDetails**</td>
+      <td vAlign="top">[DetailsOfErrors](#detailsoferrors)</td>
+      <td>Returns details of each proxy error (for both `4xx` and `5xx` response codes) within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `errorsDetailsFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">errorsDetailsFilter</td>
+      <td vAlign="top">[ErrorsDetailsFilter](#errorsdetailsfilter)</td>
+      <td>The error details filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getProxyTargetErrorsOverTime**</td>
+      <td vAlign="top">\[[ErrorsByStatusCodeCategory](#errorsbystatuscodecategory)\]</td>
+      <td>Returns a list of hit counts for proxy and target errors for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. The errors in each proxy and target result set are grouped as `4xx`, `5xx`, and `total`. Optionally, you can configure the `errorsByStatusCodeFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">errorsByStatusCodeFilter</td>
+      <td vAlign="top">[ErrorsByStatusCodeFilter](#errorsbystatuscodefilter)</td>
+      <td>The errors by status code filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getErrorsByStatusCode**</td>
+      <td vAlign="top">[ErrorsByStatusCode](#errorsbystatuscode)</td>
+      <td>Returns the hit count for each error response code (`401`, `404`, and `500` etc.,) for each API within the specified time range for the given combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">errorCountByStatusCodeFilter</td>
+      <td vAlign="top">[ErrorCountByStatusCodeFilter](#errorcountbystatuscodefilter)!</td>
+      <td>The error count by status code filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTotalErrorsByAPI**</td>
+      <td vAlign="top">[TotalError](#totalerror)</td>
+      <td>Returns the total proxy error hit count for an API across for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `filter` parameter to further filter the results by a given time range.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiId</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The API ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getAPIUsageOverTime**</td>
+      <td vAlign="top">\[[APIUsageOverTime](#apiusageovertime)\]</td>
+      <td>Returns a list of details related to the usage of each API over time for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `apiUsageOvertimeFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiUsageOvertimeFilter</td>
+      <td vAlign="top">[APIUsageOverTimeFilter](#apiusageovertimefilter)</td>
+      <td>The API usage overtime filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getAPIUsageByAppOverTime**</td>
+      <td vAlign="top">[APIUsageByAppOverTime](#apiusagebyappovertime)</td>
+      <td>Returns API usage by each application over time for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `apiUsageOvertimeFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiUsageOvertimeFilter</td>
+      <td vAlign="top">[APIUsageOverTimeFilter](#apiusageovertimefilter)</td>
+      <td>The API usage overtime filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getAPIUsageByBackendOverTime**</td>
+      <td vAlign="top">[APIUsageByBackendOverTime](#apiusagebybackendovertime)</td>
+      <td>Returns API usage by each backend over time for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `apiUsageByBackendOverTimeFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiUsageByBackendOverTimeFilter</td>
+      <td vAlign="top">[APIUsageByBackendOverTimeFilter](#apiusagebybackendovertimefilter)</td>
+      <td>The API usage by backend overtime filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getResourceUsage**</td>
+      <td vAlign="top">[ResourceUsages](#resourceusages)</td>
+      <td>Returns API usage by resource within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `resourceUsageFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">resourceUsageFilter</td>
+      <td vAlign="top">[ResourceUsageFilter](#resourceusagefilter)</td>
+      <td>The resource usage filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTotalTrafficByAPI**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>Returns the total hit count for an API for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `filter` parameter to further filter the results by a given time range.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiId</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The API ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**topSlowestAPIs**</td>
+      <td vAlign="top">\[[SlowAPI](#slowapi)\]</td>
+      <td>Returns a list of top slowest APIs based on the response latency (95th percentile value) within the specified time range for the given combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">limit</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The limit for the slow APIs list.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getLatency**</td>
+      <td vAlign="top">[APILatency](#apilatency)</td>
+      <td>Returns different latency category values (95th percentile values) for a given API over time for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">latencyFilter</td>
+      <td vAlign="top">[LatencyFilter](#latencyfilter)!</td>
+      <td>The latency filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getOverallLatencyByAPI**</td>
+      <td vAlign="top">[OverallLatency](#overalllatency)</td>
+      <td>Returns the overall response latency (95th percentile value) for an API for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `filter` parameter to further filter the results by a given time range.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">filter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiId</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The API ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getCacheHitsAndMisses**</td>
+      <td vAlign="top">[CacheHits](#cachehits)</td>
+      <td>Return the total number of response cache hits, misses, and hit percentage for an API over time for each time granularity within the specified time range for the given combination of tenant ID, environment ID, and organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">cacheFilter</td>
+      <td vAlign="top">[CacheFilter](#cachefilter)</td>
+      <td>The cache filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTopPlatforms**</td>
+      <td vAlign="top">\[[Platform](#platform)\]</td>
+      <td>Returns a list of top platforms ranked based on the hit count within the specified time range for the given combination of tenant ID, environment ID, and organization ID. The result list includes the top nine platforms with the respective hit count, and all the rest of the platforms are labeled as \*\*Other\*\* with the cumulated hit count. Optionally, you can configure the `deviceFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">deviceFilter</td>
+      <td vAlign="top">[DeviceFilter](#devicefilter)</td>
+      <td>The device filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTopUserAgents**</td>
+      <td vAlign="top">\[[UserAgent](#useragent)\]</td>
+      <td>Returns a list of top user agents ranked based on the hit count within the specified time range for the given combination of tenant ID, environment ID, and organization ID. The result list includes the top nine user agents with the respective hit count, and all the rest of the platforms are labeled as \*\*Other\*\* with the cumulated hit count. Optionally, you can configure the `deviceFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">deviceFilter</td>
+      <td vAlign="top">[DeviceFilter](#devicefilter)</td>
+      <td>The device filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getAPIUsageByGeoLocation**</td>
+      <td vAlign="top">\[[UsageByGeoLocation](#usagebygeolocation)\]</td>
+      <td>NOTE: Currently, this operation returns data only for on-premise environments. Returns API usage by country within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `geoLocationFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">geoLocationFilter</td>
+      <td vAlign="top">[GeoLocationFilter](#geolocationfilter)</td>
+      <td>The geolocation filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getAPIsUsageByApplications**</td>
+      <td vAlign="top">\[[APIUsageByApplication](#apiusagebyapplication)\]</td>
+      <td>Returns details relating to the usage of each API by application within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `apiUsageByAppFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">apiUsageByAppFilter</td>
+      <td vAlign="top">[APIUsageByAppFilter](#apiusagebyappfilter)</td>
+      <td>The API usage by app filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getTopAPIsByAlertCount**</td>
+      <td vAlign="top">[TopAPIsByAlertCount](#topapisbyalertcount)</td>
+      <td>Returns top APIs ranked based on the alert count within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `topAPIsByAlertCountFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">topAPIsByAlertCountFilter</td>
+      <td vAlign="top">[TopAPIsByAlertCountFilter](#topapisbyalertcountfilter)</td>
+      <td>The top APIs by alert count filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getAlertSummary**</td>
+      <td vAlign="top">[AlertSummaries](#alertsummaries)</td>
+      <td>Returns a summary for each alert within the specified time range for the given combination of tenant ID, environment ID, and organization ID. Optionally, you can configure the `alertSummaryFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">alertSummaryFilter</td>
+      <td vAlign="top">[AlertSummaryFilter](#alertsummaryfilter)</td>
+      <td>The alert summary filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getSuccessAPIsUsageByApplications**</td>
+      <td vAlign="top">\[[SuccessAPIUsageByApplication](#successapiusagebyapplication)\]</td>
+      <td>NOTE: This operation can only be invoked via using an on-prem key as the authentication header. Returns a list of successful hit counts (i.e., 2xx response codes) within the specified time range for each API, grouped by each application. Optionally, you can configure the `successAPIUsageByAppFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">successAPIUsageByAppFilter</td>
+      <td vAlign="top">[SuccessAPIUsageByAppFilter](#successapiusagebyappfilter)</td>
+      <td>The successful API usage by application filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getSuccessAPIsUsageByApplicationsWithOnPremKey**</td>
+      <td vAlign="top">\[[SuccessAPIUsageByApplication](#successapiusagebyapplication)\]</td>
+      <td>Returns a list of successful hit counts (i.e., 2xx response codes) within the specified time range for each API, grouped by each application. Optionally, you can configure the `successAPIUsageByAppFilter` parameter to further filter the results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">onPremKey</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The value of the On-Prem key.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">successAPIUsageByAppFilter</td>
+      <td vAlign="top">[SuccessAPIUsageByAppFilter](#successapiusagebyappfilter)</td>
+      <td>The successful API usage by application filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getCustomReportOvertime**</td>
+      <td vAlign="top">[CustomReportOvertime](#customreportovertime)</td>
+      <td>Returns the summary of hits or latency data as specified for the selected time duration, grouped by time spans.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">metric</td>
+      <td vAlign="top">[Metric](#metric)!</td>
+      <td>The metric for which data needs to be retrieved.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">groupByFields</td>
+      <td vAlign="top">\[[GroupByField](#groupbyfield)\]!</td>
+      <td>The column/field by which data needs to be retrieved.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">groupByValues</td>
+      <td vAlign="top">\[[String](#string)\]!</td>
+      <td>The value used to filter by the `groupByField`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">granularity</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getCustomReportTopOvertime**</td>
+      <td vAlign="top">[CustomReportTopOvertime](#customreporttopovertime)</td>
+      <td>Returns the summary of hits or latency data as specified for the selected time duration, grouped by time spans for the top N values for the selected groupByField.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">timeFilter</td>
+      <td vAlign="top">[TimeFilter](#timefilter)!</td>
+      <td>The time filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">metric</td>
+      <td vAlign="top">[Metric](#metric)!</td>
+      <td>The metric for which data needs to be retrieved.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">groupByFields</td>
+      <td vAlign="top">\[[GroupByField](#groupbyfield)\]!</td>
+      <td>The column/field by which the data should be grouped.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">groupByValues</td>
+      <td vAlign="top">\[[String](#string)\]!</td>
+      <td>The value used to filter by the `groupByField`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">granularity</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**getGroupByValues**</td>
+      <td vAlign="top">\[\[[String](#string)\]\]</td>
+      <td>Returns a list of value sets by which you can group the data available for the selected `groupBy` fields.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">dataFilter</td>
+      <td vAlign="top">[DataFilter](#datafilter)!</td>
+      <td>The data filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">groupByFields</td>
+      <td vAlign="top">\[[GroupByField](#groupbyfield)\]!</td>
+      <td>The column/field for which the API needs to retrieve distinct values.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" align="right" vAlign="top">groupByValues</td>
+      <td vAlign="top">\[[String](#string)\]!</td>
+      <td>The value used to filter by the `groupByField`.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Objects
+
+### API
+
+Represents API details.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**id**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**name**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The API name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**version**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The API version.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**provider**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The API provider name.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APILatency
+
+Represents latency values for a single API over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**summary**</td>
+      <td vAlign="top">\[[Latency](#latency)\]</td>
+      <td>A list containing latency category values over time. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsage
+
+Represents the API usage for a single timestamp. The timestamp is calculated based on the granularity value provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The API usage count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageByApp
+
+Represents API usage across APIs by a single application.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationId**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The application ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationName**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The application name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationOwner**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the application owner.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[APIUsage](#apiusage)\]</td>
+      <td>A list containing the APIs usage values. Returns an empty array if no data is available.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageByAppOverTime
+
+Represents API usage across APIs by applications over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[APIUsageByApp](#apiusagebyapp)\]</td>
+      <td>A list containing the API usage values across APIs, grouped by the application. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageByApplication
+
+Represents a single API usage by a single application.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The Application ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationName**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The application name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationOwner**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the application owner.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The usage of the API by the application.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageByBackend
+
+Represents API usage across APIs by a single backend.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**backend**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the backend.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[APIUsage](#apiusage)\]</td>
+      <td>A list containing the APIs usage values. Returns an empty array if no data is available.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageByBackendOverTime
+
+Represents API usage across APIs by each backend over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[APIUsageByBackend](#apiusagebybackend)\]</td>
+      <td>A list containing the API usage values across APIs by each backend. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageOverTime
+
+Represents a single API usage over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[APIUsage](#apiusage)\]</td>
+      <td>A list containing the API usage values. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### AlertSummaries
+
+Represents alert summaries.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[AlertSummary](#alertsummary)\]</td>
+      <td>A list containing the alert summary for each alert. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**pagination**</td>
+      <td vAlign="top">[Pagination](#pagination)!</td>
+      <td>The pagination details.</td>
+    </tr>
+  </tbody>
+</table>
+
+### AlertSummary
+
+Represents a summary for an alert.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**timestamp**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**category**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The alert category. Possible values are `LATENCY` and `TRAFFIC`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**metric**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The alert metric. Possible values are `RESPONSE_LATENCY` and `TOTAL_TRAFFIC`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**severity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The severity level of the alert. Possible values are `LOW`, `MEDIUM`, and `HIGH`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**message**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The alert details.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Application
+
+Represents application details.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**id**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The Application ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**name**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The application name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**owner**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the application owner.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CacheHit
+
+Represents the response cache hits and misses for a single timestamp. The timestamp is calculated based on the
+granularity value provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**hits**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The number of times the response cache was hit.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**misses**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The number of times the response cache was missed.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**hitPercentage**</td>
+      <td vAlign="top">[Float](#float)!</td>
+      <td>The response cache hits as a percentage of the sum of hits and misses.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CacheHits
+
+Represents the response cache hits and misses over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**summary**</td>
+      <td vAlign="top">\[[CacheHit](#cachehit)\]</td>
+      <td>A list containing cache hits, misses, and the hit percentage over time. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomReportGroupBy
+
+Represents the usage data overtime for the selected parameters of a specific `groupByValue`.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**groupByValue**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The distinct group-by value that is used as an ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[CustomReportUsage](#customreportusage)\]</td>
+      <td>A list containing the usage values. This returns an empty array if no data is available.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomReportOvertime
+
+Represents usage data overtime for the selected parameters.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[CustomReportUsage](#customreportusage)\]</td>
+      <td>A list containing the usage values. This returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomReportTopOvertime
+
+Represents usage data overtime for the selected parameters grouped by the top N `groupByValues`.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[CustomReportGroupBy](#customreportgroupby)\]</td>
+      <td>A list containing the usage values grouped by the selected `groupByField`. This returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomReportUsage
+
+Represents usage data for a single timestamp in `CustomReports`.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**value**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The usage value (Hit Count/ Latency).</td>
+    </tr>
+  </tbody>
+</table>
+
+### DetailsOfErrors
+
+Represents error details over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[ErrorDetails](#errordetails)\]!</td>
+      <td>A list containing error details over time. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**pagination**</td>
+      <td vAlign="top">[Pagination](#pagination)!</td>
+      <td>The pagination details.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Environment
+
+Represents an environment.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**id**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The environment ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**externalEnvId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The external environment ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**internalEnvId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The internal environment ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**sandboxEnvId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The sandbox environment ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**name**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The environment name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**type**</td>
+      <td vAlign="top">[EnvironmentType](#environmenttype)!</td>
+      <td>The environment type. A {edition.productName} environment is labeled as `CHOREO`, a private {edition.productName} environment is labeled as `CHOREO_PRIVATE`, and the on-premise environment is labeled as `ON_PREM`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorCountByCategory
+
+Represents the number of errors from each category for a single timestamp. The timestamp is calculated according to the
+provided granularity value. If you select some categories, the error counts are retrieved only for those categories,
+and a `null` value is shown for the other categories that are not selected.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**auth**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The count of authorization errors.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**targetConnectivity**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The count of target connectivity errors.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**throttled**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The count of throttling errors.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**other**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The count of other errors.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorCountByCode
+
+Represents the error count for a single error status code.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**statusCode**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The error status code.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The error count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorCountByCodeForAPI
+
+Represents the error count for each status code for a single API.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**errorCountByCode**</td>
+      <td vAlign="top">\[[ErrorCountByCode](#errorcountbycode)\]</td>
+      <td>A list containing the error count for each error status code. Returns an empty array if no data is available.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorDetails
+
+Represents details of an error for a single timestamp. The timestamp is calculated according to the granularity value
+provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The Application ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationName**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The application name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationOwner**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The name of the application owner.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**reason**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The reason for the error.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The error count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorStatusCodeCategoryCounts
+
+Represents errors by the main status code (`4xx` or `5xx`) and the total error count.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**\_4xx**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The number of client errors.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**\_5xx**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The number of server errors.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**total**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The total number of client and server errors.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorSummary
+
+Provides the unsuccessful usage (i.e., `4xx` and `5xx` response codes) summary across all APIs.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**summary**</td>
+      <td vAlign="top">\[[ErrorValue](#errorvalue)\]!</td>
+      <td>A list containing unsuccessful usage values. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorValue
+
+Represents the unsuccessful request count (i.e., `4xx` and `5xx` response codes) for a single timestamp. The timestamp
+is calculated based on the granularity value provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**errorCount**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>Represents the error request count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorsByCategory
+
+Represents the errors by category over time.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**errors**</td>
+      <td vAlign="top">\[[ErrorCountByCategory](#errorcountbycategory)\]</td>
+      <td>A list containing the error count for each error category over time. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorsByStatusCode
+
+Represents the error counts grouped by status code for each API.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**errors**</td>
+      <td vAlign="top">\[[ErrorCountByCodeForAPI](#errorcountbycodeforapi)\]!</td>
+      <td>A list containing the error count for each status code for each API. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**pagination**</td>
+      <td vAlign="top">[Pagination](#pagination)!</td>
+      <td>Pagination details.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorsByStatusCodeCategory
+
+Represents the error category values (grouped as `4xx`, `5xx`, and `total`) for both proxy and target errors for a
+single timestamp. The timestamp is calculated based on the granularity value provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**proxy**</td>
+      <td vAlign="top">[ErrorStatusCodeCategoryCounts](#errorstatuscodecategorycounts)</td>
+      <td>Represents proxy-related errors categorized as client errors (`4xx` response codes) or server errors (`5xx` response codes), and the total of both categories.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**target**</td>
+      <td vAlign="top">[ErrorStatusCodeCategoryCounts](#errorstatuscodecategorycounts)</td>
+      <td>Represents target-related errors categorized as client errors (`4xx` response codes) or server errors (`5xx` response codes), and the total of both categories.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Latency
+
+Represents latency values for each latency category for a single timestamp. The timestamp is calculated based on the
+granularity value provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**response**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The response latency (95th percentile) in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**backend**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The backend latency (95th percentile) in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**requestMediation**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The request mediation latency (95th percentile) in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**responseMediation**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The response mediation latency (95th percentile) in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**responseMedian**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The median (50th percentile) of the response latency in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**backendMedian**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The median (50th percentile) of the backend latency in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**requestMediationMedian**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The median (50th percentile) of the request mediation latency in milliseconds (ms).</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**responseMediationMedian**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The median (50th percentile) of the response mediation latency in milliseconds (ms).</td>
+    </tr>
+  </tbody>
+</table>
+
+### LatencySummary
+
+Provides the latency summary.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**summary**</td>
+      <td vAlign="top">\[[LatencyValue](#latencyvalue)\]!</td>
+      <td>A list containing latency values. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### LatencyValue
+
+Represents the latency value for a single timestamp. The timestamp is calculated according to the provided granularity
+value.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**latencyTime**</td>
+      <td vAlign="top">[Float](#float)!</td>
+      <td>Represents the latency (95th percentile) time in milliseconds (ms).</td>
+    </tr>
+  </tbody>
+</table>
+
+### Organization
+
+Represents an organization.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**id**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The organization ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**uuid**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The organization UUID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**handle**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The organization handle name.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**name**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The organization name.</td>
+    </tr>
+  </tbody>
+</table>
+
+### OverallLatency
+
+Represents the overall latency values.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**response**</td>
+      <td vAlign="top">[Float](#float)</td>
+      <td>The response latency (95th percentile value) in milliseconds (ms).</td>
+    </tr>
+  </tbody>
+</table>
+
+### Pagination
+
+Represents pagination details.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**total**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The total number of results.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**limit**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The number of items in the result set.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**offset**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The offset value for the result set.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**sortBy**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The sorting column name of the result set.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**sortOrder**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The sorting order of the result set. Possible values are `asc` and `desc`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Platform
+
+Represents a platform.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**platform**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the platform.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The usage of the platform.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Provider
+
+Represents API Provider details.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**name**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The API provider name.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ResourceUsage
+
+Represents the usage of a single API resource.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiResourceTemplate**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The API resource template.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiMethod**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The API method.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The usage of the API resource.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ResourceUsages
+
+Represents API resource usages.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[ResourceUsage](#resourceusage)\]</td>
+      <td>A list with the usage of each API resource. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**pagination**</td>
+      <td vAlign="top">[Pagination](#pagination)!</td>
+      <td>Pagination details.</td>
+    </tr>
+  </tbody>
+</table>
+
+### SlowAPI
+
+A slow API identified based on the response latency (95th percentile).
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**latency**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>Represents the latency (95th percentile) time in milliseconds (ms).</td>
+    </tr>
+  </tbody>
+</table>
+
+### Subscriber
+
+Represents API Subscriber details.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**name**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the API subscriber.</td>
+    </tr>
+  </tbody>
+</table>
+
+### SuccessAPIUsageByApplication
+
+Represents successful usages(that have resulted in the `2xx` response code) of an API by an application.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiName**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiVersion**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The version of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiCreatorTenantDomain**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The tenant domain of the API creator.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The application ID.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationName**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the application.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**applicationOwner**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the application owner.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### SuccessSummary
+
+Provides the successful (2xx response code) usage summary across all the APIs.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**summary**</td>
+      <td vAlign="top">\[[SuccessValue](#successvalue)\]!</td>
+      <td>A list containing successful usage values. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The granularity value for which data is retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+### SuccessValue
+
+Represents the successful request count (i.e., requests that have received the `2xx` response code) for a single
+timestamp. The timestamp is calculated according to the granularity value provided.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**timeSpan**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Represents a timestamp value that is calculated based on the specified granularity value. For example, if the granularity value is `1d`, the timestamp represents the start of the day calculated adhering to the timezone provided in the time filter. e.g., `timeSpan: '2021-06-21T00:00:00.0000000+05:30'`</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**requestCount**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>Represents the successful request count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TopAPIByAlertCount
+
+Represents a top API by alert count.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[ID](#id)!</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The alert count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TopAPIsByAlertCount
+
+Represents the top APIs by alert count.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**usage**</td>
+      <td vAlign="top">\[[TopAPIByAlertCount](#topapibyalertcount)\]</td>
+      <td>A list containing top APIs by alert count. Returns an empty array if no data is available.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**pagination**</td>
+      <td vAlign="top">[Pagination](#pagination)!</td>
+      <td>The pagination details.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TotalError
+
+Represents the total errors.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**proxy**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The proxy-related error count.</td>
+    </tr>
+  </tbody>
+</table>
+
+### UsageByGeoLocation
+
+Represents the usage of a single API in a single country.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**country**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the country.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The usage of the API.</td>
+    </tr>
+  </tbody>
+</table>
+
+### UserAgent
+
+Represents a user agent.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Field</th>
+      <th align="right">Argument</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**userAgent**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the user agent.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**count**</td>
+      <td vAlign="top">[Int](#int)!</td>
+      <td>The usage of the user agent.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Inputs
+
+### APIUsageByAppFilter
+
+Filters the API usage by application results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**appIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of applications you specify here. A maximum of five application IDs can be defined.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**subscribers**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of subscribers you specify here. A maximum of five subscriber IDs can be defined.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageByBackendOverTimeFilter
+
+Filters the results for API usage by backend over time.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### APIUsageOverTimeFilter
+
+Filters the results for API usage over time.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**appIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of applications you specify here. A maximum of five application IDs can be defined.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### AlertSummaryFilter
+
+Filters the alerts summary results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**paginationFilter**</td>
+      <td vAlign="top">[PaginationFilter](#paginationfilter)</td>
+      <td>The pagination filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**searchFilter**</td>
+      <td vAlign="top">[SearchFilter](#searchfilter)</td>
+      <td>The search filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**category**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The alert category by which the results need to be filtered. The available categories to select are `TRAFFIC` and `LATENCY`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ApplicationFilter
+
+Filters applications by the application owner and API IDs.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**owner**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+  </tbody>
+</table>
+
+### CacheFilter
+
+Filters response cache results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The results are filtered by the API ID specified here.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### DataFilter
+
+Filters results by the given combination of organization, environment, and tenant.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**orgId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The organization by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**environmentId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The environment ID by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**environmentIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The environment IDs by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**tenant**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The name of the tenant by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**projectId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The project ID by which the results need to be filtered. It is optional to specify a value for this parameter. Note that providing a project ID with an on-prem key is not allowed.</td>
+    </tr>
+  </tbody>
+</table>
+
+### DeviceFilter
+
+Filters results related to devices.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorCountByStatusCodeFilter
+
+Filters errors by status code results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The results are filtered by the API ID specified here.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**errorType**</td>
+      <td vAlign="top">[ErrorType](#errortype)!</td>
+      <td>The type of the error. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**errorCodeType**</td>
+      <td vAlign="top">[ErrorCodeType](#errorcodetype)</td>
+      <td>The error code type. If this parameter is not configured, both client-related error response codes (`401`, `404`, etc.) and server-related response codes (`500`, `501`, etc.) are included in the result set.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**paginationFilter**</td>
+      <td vAlign="top">[PaginationFilter](#paginationfilter)</td>
+      <td>The pagination filter.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorsByCategoryFilter
+
+Filters errors by category results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The ID of the API.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**categories**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The list of categories by which the results need to be filtered. Category values that you can specify here are `AUTH`, `TARGET_CONNECTIVITY`, `THROTTLED`, and `OTHER`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorsByStatusCodeFilter
+
+Filters errors by status code results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The results are filtered by the API ID specified here.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### ErrorsDetailsFilter
+
+Filters the results for error details.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The results are filtered by the API ID specified here.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**appId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The application ID by which the results need to be filtered.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**category**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The error category by which the results need to be filtered. The error category that you can specify here must be one of the `AUTH` `TARGET_CONNECTIVITY`, `THROTTLED`, and `OTHER` values.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**paginationFilter**</td>
+      <td vAlign="top">[PaginationFilter](#paginationfilter)</td>
+      <td>The pagination filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**searchFilter**</td>
+      <td vAlign="top">[SearchFilter](#searchfilter)</td>
+      <td>The search filter.</td>
+    </tr>
+  </tbody>
+</table>
+
+### GeoLocationFilter
+
+Filters the API usage by geolocation results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here.</td>
+    </tr>
+  </tbody>
+</table>
+
+### LatencyFilter
+
+Filters latency results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The results are filtered by the API ID specified here. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### LatencySummaryFilter
+
+Filters latency summary results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The results are filtered by the API ID specified here.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**granularity**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The granularity value that is used for data retrieval. If the granularity value is not set, the default granularity for the related time range is applied. The possible granularity values that you can specify are `1m`, `15m`, `1h`, `1d`, and `7d`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### OrgFilter
+
+Filters results for the given organization.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**orgId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The ID of the organization by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+  </tbody>
+</table>
+
+### PaginationFilter
+
+Filters related to pagination.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**limit**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The total number of rows in the result set. This value must be a positive integer. If this limit value is not set, the total number of rows is five by default.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**offset**</td>
+      <td vAlign="top">[Int](#int)</td>
+      <td>The offset value to set when filtering results. This value must be zero or a positive integer. If you do not specify an offset value, the default offset value (i.e., `0`) applies.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**sortBy**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The column name by which the results are sorted. If the `sortBy` value is not set, the default column of the related operation that is available for sorting purposes is used.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**sortOrder**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The order in which the results are sorted. Possible values are `asc` (to sort in ascending order) and `desc` (to sort in descending order). If no value is specified, the results are sorted in ascending order by default (except for count-specific operations such as `getTopAPIsByAlertCount` where the results are always sorted in descending order).</td>
+    </tr>
+  </tbody>
+</table>
+
+### ResourceUsageFilter
+
+Filters resource usage results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**paginationFilter**</td>
+      <td vAlign="top">[PaginationFilter](#paginationfilter)</td>
+      <td>The pagination filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**searchFilter**</td>
+      <td vAlign="top">[SearchFilter](#searchfilter)</td>
+      <td>The search filter.</td>
+    </tr>
+  </tbody>
+</table>
+
+### SearchFilter
+
+Filters results by searching matching results for the provided search text.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The list of API IDs that need to be searched with the given search text. Note that it is not possible to define API IDs without a search text in the search filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**searchText**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>Text which needs to be searched among the results. It is required to specify a value for this parameter.</td>
+    </tr>
+  </tbody>
+</table>
+
+### SubscriberFilter
+
+Filters the subscriber results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The results are filtered for the list of APIs you specify here. A maximum of five API IDs can be defined.</td>
+    </tr>
+  </tbody>
+</table>
+
+### SuccessAPIUsageByAppFilter
+
+Filters successful API usage by application results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**apiIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The list of API IDs by which the results need to be filtered.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**tenantDomains**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The tenant domain name by which the results need to be filtered.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TenantDataFilter
+
+Filters results by the tenant.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**orgId**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The ID of the organization by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**envId**</td>
+      <td vAlign="top">[String](#string)</td>
+      <td>The ID of the environment by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**environmentIds**</td>
+      <td vAlign="top">\[[String](#string)\]</td>
+      <td>The environment IDs by which the results need to be filtered. It is required to specify a value for this parameter.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TimeFilter
+
+Filters results by the provided date range.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**from**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The start date of the time range. The date specified here must be a date earlier than the date specified via the `to` parameter. If the defined date and time entry do not have a timezone, the `UTC` time zone (z) is used. It is required to specify a value for this parameter. e.g., `'2021-08-16T12:00:00.000+05:30'`.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**to**</td>
+      <td vAlign="top">[String](#string)!</td>
+      <td>The end date of the time range. The date specified here must be a date later than the date specified via the `from` parameter. If the defined date and time entry do not have a timezone, the `UTC` time zone (z) is used. It is required to specify a value for this parameter. e.g., `'2021-08-16T12:30:00.000+05:30'`.</td>
+    </tr>
+  </tbody>
+</table>
+
+### TopAPIsByAlertCountFilter
+
+Filters the top APIs by alert count results.
+
+<table>
+  <thead>
+    <tr>
+      <th colSpan="2" align="left">Field</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colSpan="2" vAlign="top">**paginationFilter**</td>
+      <td vAlign="top">[PaginationFilter](#paginationfilter)</td>
+      <td>The pagination filter.</td>
+    </tr>
+    <tr>
+      <td colSpan="2" vAlign="top">**searchFilter**</td>
+      <td vAlign="top">[SearchFilter](#searchfilter)</td>
+      <td>The search filter.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Enums
+
+### EnvironmentType
+
+Represents an error type.
+
+| Value | Description |
+| --- | --- |
+| **CHOREO** | The {edition.productName} environments. |
+| **CHOREO_PRIVATE** | The private data-plane {edition.productName} environments. |
+| **ON_PREM** | The On-Premise environments. |
+
+### ErrorCodeType
+
+Represents an error code type.
+
+| Value | Description |
+| --- | --- |
+| **\_4XX** | The client-side errors. |
+| **\_5XX** | The server-side errors. |
+
+### ErrorType
+
+Represents an error type.
+
+| Value | Description |
+| --- | --- |
+| **PROXY** | The proxy-related errors. |
+| **TARGET** | The target-related errors. |
+
+### GroupByField
+
+Represents an `groupByField` used in `CustomReports`.
+
+| Value | Description |
+| --- | --- |
+| **API_NAME** | The API name. |
+| **API_VERSION** | The API version. |
+| **API_RESOURCE_TEMPLATE** | The API resource template. |
+| **API_METHOD** | The API method. |
+| **API_CREATOR** | The API creator. |
+| **APPLICATION_NAME** | The name of the application. |
+| **APPLICATION_OWNER** | The owner of the application. |
+| **DESTINATION** | The destination. |
+| **USER_AGENT** | The user Agent. |
+| **PLATFORM** | The platform. |
+| **TARGET_RESPONSE_CODE** | The target response code. |
+
+### Metric
+
+Represents a metric used in `CustomReports`.
+
+| Value | Description |
+| --- | --- |
+| **HIT_COUNT** | The number of API calls. |
+| **RESPONSE_CACHE_HIT** | The number of API calls that used the response cache. |
+| **REQUEST_MEDIATION_LATENCY** | The request mediation latency. |
+| **RESPONSE_MEDIATION_LATENCY** | The response mediation latency. |
+| **BACKEND_LATENCY** | The backend latency. |
+| **TOTAL_LATENCY** | The total latency. |
+| **API_ERRORS** | The number of hits for which API errors are returned. |
+| **TARGET_ERRORS** | The number of hits for which target errors are returned. |
+
+## Scalars
+
+### Boolean
+
+The `Boolean` scalar type represents `true` or `false`.
+
+### Float
+
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+
+### ID
+
+The `ID` scalar type represents a unique identifier, often used to re-fetch an object or as the key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value is accepted as an ID.
+
+### Int
+
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+
+### String
+
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.

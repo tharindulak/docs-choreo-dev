@@ -1,0 +1,6 @@
+# Each Doc space directory is owned by its team (owners.team in its docspace.yaml);
+# the shared root files come from the Platform template.
+* @wso2/engineering-platform-docs
+/engineering-platform/ @wso2/engineering-platform-docs
+/.github/ @wso2/docs-platform
+/.vscode/ @wso2/docs-platform
