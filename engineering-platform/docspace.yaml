@@ -12,7 +12,7 @@ editionNames:
 home: engineering-platform
 owners:
   team: engineering-platform-docs
-repo: wso2/docs-choreo-dev
+repo: tharindulak/docs-choreo-dev
 audienceGroups:
   - developers
   - platform-engineers
